@@ -1,0 +1,4726 @@
+[
+ {
+  "question": "How many weeks of paid leave do primary caregivers get?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "26 weeks",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "primary caregiver",
+   "paid leave",
+   "weeks",
+   "parental leave"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Direct factual question about parental leave entitlement for primary caregivers. Single span answer from chunk.",
+  "test_case_id": "TC_001"
+ },
+ {
+  "question": "What's the notice period required before taking parental leave?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "60 days",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "parental leave",
+   "request",
+   "notice",
+   "advance",
+   "days"
+  ],
+  "intent_category": "Policy Requirements",
+  "reasoning_notes": "Straightforward question about advance notification requirement. Uses colloquial phrasing instead of exact wording.",
+  "test_case_id": "TC_002"
+ },
+ {
+  "question": "How long do companies have to respond to data access requests?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "30 days",
+  "ground_truth_context_ids": [
+   "data-privacy"
+  ],
+  "retrieval_keywords": [
+   "data subject access request",
+   "response time",
+   "days",
+   "personal data"
+  ],
+  "intent_category": "Compliance Timeline",
+  "reasoning_notes": "Factual compliance question about response deadline. Vague phrasing ('how long') instead of copying exact terms.",
+  "test_case_id": "TC_003"
+ },
+ {
+  "question": "What's the reimbursement rate for business mileage?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "0.62 dollars per mile",
+  "ground_truth_context_ids": [
+   "mileage"
+  ],
+  "retrieval_keywords": [
+   "mileage",
+   "reimbursement",
+   "rate",
+   "per mile",
+   "dollars"
+  ],
+  "intent_category": "Expense Policy",
+  "reasoning_notes": "Simple factual question about mileage reimbursement rate. Uses natural phrasing.",
+  "test_case_id": "TC_004"
+ },
+ {
+  "question": "How much leave do secondary caregivers receive?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "8 weeks of paid parental leave",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "secondary caregiver",
+   "parental leave",
+   "weeks",
+   "paid"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Direct comparison question about secondary caregiver entitlements. Clear and unambiguous.",
+  "test_case_id": "TC_005"
+ },
+ {
+  "question": "Is commuting to the office eligible for mileage reimbursement?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "No, commuting between home and the regular office is not reimbursable",
+  "ground_truth_context_ids": [
+   "mileage"
+  ],
+  "retrieval_keywords": [
+   "mileage",
+   "commuting",
+   "office",
+   "reimbursable",
+   "home"
+  ],
+  "intent_category": "Expense Policy",
+  "reasoning_notes": "Factual question about reimbursement eligibility. Answers a yes/no query with explanation.",
+  "test_case_id": "TC_006"
+ },
+ {
+  "question": "When must security breaches be reported?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Immediately",
+  "ground_truth_context_ids": [
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "security incident",
+   "report",
+   "immediately",
+   "security operations center"
+  ],
+  "intent_category": "Security Protocol",
+  "reasoning_notes": "Straightforward factual question about incident reporting timing. Single word answer.",
+  "test_case_id": "TC_007"
+ },
+ {
+  "question": "What's the timeframe for executive briefing on critical security incidents?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Within 2 hours",
+  "ground_truth_context_ids": [
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "severity 1",
+   "executive briefing",
+   "hours",
+   "critical incident"
+  ],
+  "intent_category": "Security Protocol",
+  "reasoning_notes": "Factual compliance question about incident escalation timeline. Uses conversational phrasing.",
+  "test_case_id": "TC_008"
+ },
+ {
+  "question": "How are personal data items classified when they're collected?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Confidential",
+  "ground_truth_context_ids": [
+   "data-privacy"
+  ],
+  "retrieval_keywords": [
+   "personal data",
+   "classification",
+   "confidential",
+   "collection"
+  ],
+  "intent_category": "Data Handling",
+  "reasoning_notes": "Direct factual question about data classification requirement. Single span answer.",
+  "test_case_id": "TC_009"
+ },
+ {
+  "question": "What documentation is needed when submitting a mileage claim?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "A trip log with start and end locations",
+  "ground_truth_context_ids": [
+   "mileage"
+  ],
+  "retrieval_keywords": [
+   "mileage claim",
+   "trip log",
+   "documentation",
+   "start",
+   "end locations"
+  ],
+  "intent_category": "Expense Policy",
+  "reasoning_notes": "Factual question about required documentation. Uses natural phrasing instead of exact wording.",
+  "test_case_id": "TC_010"
+ },
+ {
+  "question": "What's the maximum amount I can spend on a gift for a client without having to log it?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "50 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gifts",
+   "gift limit",
+   "recording threshold",
+   "gift register"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Directly asks for the threshold below which gifts don't need to be recorded, answerable from the client-gifts chunk.",
+  "test_case_id": "TC_011"
+ },
+ {
+  "question": "How long can idle compute resources stay running before they get terminated?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "14 days",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "idle compute",
+   "resource shutdown",
+   "cloud resources",
+   "termination period"
+  ],
+  "intent_category": "Cloud Operations",
+  "reasoning_notes": "Simple factual question about the idle resource cleanup timeframe from cloud-spend chunk.",
+  "test_case_id": "TC_012"
+ },
+ {
+  "question": "Can we give gifts to people working in government?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "No, gifts to government officials are prohibited",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "government officials",
+   "gifts prohibited",
+   "government employees",
+   "policy"
+  ],
+  "intent_category": "Compliance",
+  "reasoning_notes": "Direct yes/no question about gift policy for government officials from client-gifts chunk.",
+  "test_case_id": "TC_013"
+ },
+ {
+  "question": "What percentage of the monthly budget triggers an alert in our cloud system?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "80 percent",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "budget alert",
+   "threshold",
+   "monthly budget",
+   "cloud spend"
+  ],
+  "intent_category": "Cloud Operations",
+  "reasoning_notes": "Asks for the budget alert trigger percentage from cloud-spend governance chunk.",
+  "test_case_id": "TC_014"
+ },
+ {
+  "question": "What's the spending limit for using a corporate card on purchases?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "1000 dollars",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "corporate card",
+   "purchase limit",
+   "spending threshold",
+   "procurement"
+  ],
+  "intent_category": "Procurement Policy",
+  "reasoning_notes": "Straightforward question about corporate card spending limit from procurement-thresholds chunk.",
+  "test_case_id": "TC_015"
+ },
+ {
+  "question": "How much can I spend on a client gift before it's not allowed?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "100 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "maximum value",
+   "gift policy",
+   "spending limit"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Asks for the maximum client gift value threshold from client-gifts chunk.",
+  "test_case_id": "TC_016"
+ },
+ {
+  "question": "What kind of verification is needed when a vendor wants to update their banking information?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Phone verification with a known contact",
+  "ground_truth_context_ids": [
+   "vendor-onboarding"
+  ],
+  "retrieval_keywords": [
+   "vendor bank details",
+   "verification",
+   "phone verification",
+   "vendor changes"
+  ],
+  "intent_category": "Vendor Management",
+  "reasoning_notes": "Factual question about vendor bank detail change verification from vendor-onboarding chunk.",
+  "test_case_id": "TC_017"
+ },
+ {
+  "question": "When do vendor contracts require legal review before we can sign them?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "When they are above 100000 dollars",
+  "ground_truth_context_ids": [
+   "vendor-onboarding"
+  ],
+  "retrieval_keywords": [
+   "vendor contract",
+   "legal review",
+   "contract value",
+   "threshold"
+  ],
+  "intent_category": "Vendor Management",
+  "reasoning_notes": "Direct question about contract value threshold for legal review from vendor-onboarding chunk.",
+  "test_case_id": "TC_018"
+ },
+ {
+  "question": "What must be attached to every cloud project for tracking purposes?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Cost-center tags",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "cloud project",
+   "cost-center tag",
+   "tagging",
+   "tracking"
+  ],
+  "intent_category": "Cloud Operations",
+  "reasoning_notes": "Asks for the required tagging requirement for cloud projects from cloud-spend chunk.",
+  "test_case_id": "TC_019"
+ },
+ {
+  "question": "How many price quotes do I need to get for a mid-range purchase between 1000 and 25000 dollars?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Two competitive quotes",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "competitive quotes",
+   "procurement",
+   "purchase range",
+   "quotes required"
+  ],
+  "intent_category": "Procurement Policy",
+  "reasoning_notes": "Straightforward factual question about quote requirements for the 1000-25000 dollar range from procurement-thresholds chunk.",
+  "test_case_id": "TC_020"
+ },
+ {
+  "question": "How many days of paid sick leave do employees get annually?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "10 paid sick days per year",
+  "ground_truth_context_ids": [
+   "leave-sick"
+  ],
+  "retrieval_keywords": [
+   "sick leave",
+   "paid days",
+   "annual",
+   "employees"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Direct factual question about sick leave entitlement, answerable from a single sentence in the leave-sick chunk.",
+  "test_case_id": "TC_021"
+ },
+ {
+  "question": "What's the maximum dollar amount for client gifts without needing to register them?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "50 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "gift register",
+   "client gifts",
+   "value limit",
+   "recording threshold"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Simple factual question about gift value thresholds, directly stated in the client-gifts chunk.",
+  "test_case_id": "TC_022"
+ },
+ {
+  "question": "How long can employees work remotely per week?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "up to 3 days per week",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "days per week",
+   "working from home",
+   "frequency"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Direct factual question about remote work frequency limits, clearly stated in the remote-work chunk.",
+  "test_case_id": "TC_023"
+ },
+ {
+  "question": "Within how many business days must conflicts of interest be reported to compliance?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "5 business days",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "disclosure",
+   "compliance",
+   "reporting timeline"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Straightforward factual question about conflict disclosure timeframe, explicitly stated in the conflict-interest chunk.",
+  "test_case_id": "TC_024"
+ },
+ {
+  "question": "What happens to unused sick leave at the end of the year?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Sick leave does not carry over to the next year",
+  "ground_truth_context_ids": [
+   "leave-sick"
+  ],
+  "retrieval_keywords": [
+   "sick leave",
+   "carryover",
+   "unused",
+   "next year",
+   "expiration"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Simple factual question about sick leave rollover policy, directly stated in the leave-sick chunk.",
+  "test_case_id": "TC_025"
+ },
+ {
+  "question": "What security measure is required when using company equipment outside the office?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Company laptops must use the corporate VPN",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "VPN",
+   "corporate",
+   "security",
+   "remote",
+   "laptop",
+   "network"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Direct factual question about remote work security requirements, clearly stated in the remote-work chunk.",
+  "test_case_id": "TC_026"
+ },
+ {
+  "question": "Are employees allowed to give gifts to government officials?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "No, gifts to government officials are prohibited",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "government officials",
+   "gifts prohibited",
+   "hospitality",
+   "restrictions"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Simple yes/no factual question about gift restrictions, explicitly stated in the client-gifts chunk.",
+  "test_case_id": "TC_027"
+ },
+ {
+  "question": "When is a medical certificate needed for sick days?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "After 3 consecutive sick days",
+  "ground_truth_context_ids": [
+   "leave-sick"
+  ],
+  "retrieval_keywords": [
+   "medical certificate",
+   "sick leave",
+   "consecutive days",
+   "documentation"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Direct factual question about medical documentation requirements, stated in the leave-sick chunk.",
+  "test_case_id": "TC_028"
+ },
+ {
+  "question": "What review is needed if an employee works abroad for an extended period?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Tax and legal review",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "another country",
+   "international",
+   "tax",
+   "legal review",
+   "working abroad"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Factual question about requirements for extended international remote work, stated in the remote-work chunk.",
+  "test_case_id": "TC_029"
+ },
+ {
+  "question": "What must employees declare every year regarding their personal business activities?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Outside business interests",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "annual declaration",
+   "outside business",
+   "disclosure"
+  ],
+  "intent_category": "Policy Details",
+  "reasoning_notes": "Simple factual question about annual declaration requirements, explicitly stated in the conflict-interest chunk.",
+  "test_case_id": "TC_030"
+ },
+ {
+  "question": "How often do performance evaluations happen at the company?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Twice per year in June and December",
+  "ground_truth_context_ids": [
+   "performance-review"
+  ],
+  "retrieval_keywords": [
+   "performance review",
+   "frequency",
+   "cycle",
+   "evaluation schedule"
+  ],
+  "intent_category": "HR Policy",
+  "reasoning_notes": "Direct factual question about review frequency, answerable from a single sentence in the performance review chunk.",
+  "test_case_id": "TC_031"
+ },
+ {
+  "question": "What happens to employees who get the lowest performance rating?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "They enter a 90-day improvement plan",
+  "ground_truth_context_ids": [
+   "performance-review"
+  ],
+  "retrieval_keywords": [
+   "rating 1",
+   "lowest score",
+   "improvement plan",
+   "performance management"
+  ],
+  "intent_category": "HR Policy",
+  "reasoning_notes": "Simple factual question about consequences of low performance ratings, uses colloquial phrasing instead of exact terminology.",
+  "test_case_id": "TC_032"
+ },
+ {
+  "question": "What's the daily cap for meal reimbursements per person?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "50 dollars per day per employee",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal expense",
+   "reimbursement limit",
+   "daily cap",
+   "per employee"
+  ],
+  "intent_category": "Expense Policy",
+  "reasoning_notes": "Straightforward factual question about meal expense limits using casual phrasing.",
+  "test_case_id": "TC_033"
+ },
+ {
+  "question": "Can alcoholic beverages be expensed under the meal policy?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "No, alcohol is never reimbursable under the meal policy",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "alcohol",
+   "reimbursable",
+   "meal policy",
+   "beverages"
+  ],
+  "intent_category": "Expense Policy",
+  "reasoning_notes": "Yes/no factoid question about alcohol reimbursement eligibility, uses natural phrasing.",
+  "test_case_id": "TC_034"
+ },
+ {
+  "question": "When do meal receipts need to be itemized?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "When receipts are above 25 dollars",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal receipts",
+   "itemized",
+   "documentation",
+   "threshold"
+  ],
+  "intent_category": "Expense Policy",
+  "reasoning_notes": "Factual question about receipt documentation requirements with natural user phrasing.",
+  "test_case_id": "TC_035"
+ },
+ {
+  "question": "What's the maximum value allowed for a client gift?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "100 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gifts",
+   "maximum value",
+   "limit",
+   "hospitality"
+  ],
+  "intent_category": "Gift Policy",
+  "reasoning_notes": "Direct factual question about gift value limits using colloquial phrasing.",
+  "test_case_id": "TC_036"
+ },
+ {
+  "question": "Which gifts need to be recorded in the gift register?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Gifts above 50 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "gift register",
+   "recording",
+   "documentation",
+   "50 dollars"
+  ],
+  "intent_category": "Gift Policy",
+  "reasoning_notes": "Factual question about gift registry requirements, slightly rephrased for natural speech.",
+  "test_case_id": "TC_037"
+ },
+ {
+  "question": "Are gifts to government officials permitted?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "No, gifts to government officials are prohibited",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "government officials",
+   "gifts",
+   "prohibited",
+   "policy"
+  ],
+  "intent_category": "Gift Policy",
+  "reasoning_notes": "Yes/no factoid question about government official gift restrictions.",
+  "test_case_id": "TC_038"
+ },
+ {
+  "question": "What triggers budget alerts in cloud spending?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Budget alerts trigger at 80 percent of the monthly budget",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "budget alerts",
+   "cloud spend",
+   "threshold",
+   "monthly budget"
+  ],
+  "intent_category": "Cloud Governance",
+  "reasoning_notes": "Straightforward factual question about cloud budget alert thresholds.",
+  "test_case_id": "TC_039"
+ },
+ {
+  "question": "How long before idle cloud resources get automatically shut down?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "After 14 days",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "idle compute",
+   "shutdown",
+   "resource management",
+   "14 days"
+  ],
+  "intent_category": "Cloud Governance",
+  "reasoning_notes": "Factual question about idle resource cleanup timing using natural phrasing.",
+  "test_case_id": "TC_040"
+ },
+ {
+  "question": "How long do new employees typically have a buddy assigned to them when they start?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "90 days",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "buddy",
+   "new joiner",
+   "assigned",
+   "days",
+   "onboarding"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Direct factual question about buddy assignment duration for new employees, extractable from onboarding policy.",
+  "test_case_id": "TC_041"
+ },
+ {
+  "question": "What's the timeframe for setting up performance objectives after someone joins the company?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "30 days",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "performance goals",
+   "agreed",
+   "joining",
+   "timeframe",
+   "new joiners"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Factual question about performance goal agreement timeline, directly stated in HR onboarding chunk.",
+  "test_case_id": "TC_042"
+ },
+ {
+  "question": "How many months is the trial period for new hires?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "6 months",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "probation period",
+   "trial",
+   "new joiners",
+   "duration",
+   "months"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Simple factual query about probation duration for new employees.",
+  "test_case_id": "TC_043"
+ },
+ {
+  "question": "At what percentage of the budget do cloud spending alerts get triggered?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "80 percent",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "budget alerts",
+   "trigger",
+   "percentage",
+   "monthly budget",
+   "cloud spending"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Direct factual question about cloud budget alert threshold.",
+  "test_case_id": "TC_044"
+ },
+ {
+  "question": "When do idle cloud resources get automatically turned off?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "after 14 days",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "idle compute",
+   "shut down",
+   "resources",
+   "days",
+   "cloud governance"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Factual question about automatic resource cleanup timing in cloud governance.",
+  "test_case_id": "TC_045"
+ },
+ {
+  "question": "What's required on all cloud projects for tracking costs?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "cost-center tags",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "cloud projects",
+   "tags",
+   "cost tracking",
+   "cost-center",
+   "governance"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Simple factual question about cloud cost tracking requirement.",
+  "test_case_id": "TC_046"
+ },
+ {
+  "question": "How long do you have to submit an expense report after incurring the expense?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "30 days",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "expense report",
+   "submitted",
+   "deadline",
+   "days",
+   "submission"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Factual question about expense report submission deadline.",
+  "test_case_id": "TC_047"
+ },
+ {
+  "question": "What's the dollar amount threshold above which expense reports need manager sign-off?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "2000 dollars",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "expense reports",
+   "approval",
+   "manager",
+   "amount",
+   "threshold",
+   "dollars"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Direct factual question about expense approval threshold.",
+  "test_case_id": "TC_048"
+ },
+ {
+  "question": "What's the maximum purchase amount allowed using a corporate card without additional approvals?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "under 1000 dollars",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "corporate card",
+   "purchases",
+   "threshold",
+   "amount",
+   "procurement"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Factual question about corporate card spending limit from procurement policy.",
+  "test_case_id": "TC_049"
+ },
+ {
+  "question": "What procurement process applies to purchases in the 1000 to 25000 dollar range?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "two competitive quotes",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "purchases",
+   "quotes",
+   "procurement",
+   "threshold",
+   "range",
+   "dollars"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Factual question about procurement requirement for mid-range purchases.",
+  "test_case_id": "TC_050"
+ },
+ {
+  "question": "How long do new employees typically have to go through the probation phase?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "6 months",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "probation period",
+   "new joiners",
+   "duration",
+   "onboarding"
+  ],
+  "intent_category": "policy_information",
+  "reasoning_notes": "Direct factual question about probation duration from HR onboarding policy. Single span answer.",
+  "test_case_id": "TC_051"
+ },
+ {
+  "question": "What's the maximum dollar amount you can give as a gift to a client without needing to log it?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "50 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "gift register",
+   "recording threshold",
+   "client gifts",
+   "documentation"
+  ],
+  "intent_category": "compliance_rule",
+  "reasoning_notes": "Tests understanding of gift registry threshold. Requires identifying the 50 dollar limit for recording.",
+  "test_case_id": "TC_052"
+ },
+ {
+  "question": "Can you give presents to government officials as part of client hospitality?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "No, gifts to government officials are prohibited",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "government officials",
+   "gifts prohibited",
+   "restrictions",
+   "policy"
+  ],
+  "intent_category": "compliance_rule",
+  "reasoning_notes": "Clear policy prohibition question with unambiguous answer from context.",
+  "test_case_id": "TC_053"
+ },
+ {
+  "question": "How many days can a new hire expect to have a designated buddy assigned to them?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "90 days",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "buddy system",
+   "new joiner support",
+   "first period",
+   "onboarding"
+  ],
+  "intent_category": "policy_information",
+  "reasoning_notes": "Factual question about buddy assignment duration during onboarding.",
+  "test_case_id": "TC_054"
+ },
+ {
+  "question": "What's the overall limit on client gift value that shouldn't be exceeded?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "100 dollars",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "gift limit",
+   "maximum value",
+   "client hospitality",
+   "threshold"
+  ],
+  "intent_category": "compliance_rule",
+  "reasoning_notes": "Tests knowledge of maximum client gift policy threshold.",
+  "test_case_id": "TC_055"
+ },
+ {
+  "question": "Within what timeframe should performance objectives be set for a new employee?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "30 days",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "performance goals",
+   "new joiners",
+   "timeline",
+   "objectives"
+  ],
+  "intent_category": "policy_information",
+  "reasoning_notes": "Direct factual question about performance goal setting timeline.",
+  "test_case_id": "TC_056"
+ },
+ {
+  "question": "Do new vendors need to go through any verification process before they can receive their first payment?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Yes, new vendors must pass a due diligence check",
+  "ground_truth_context_ids": [
+   "vendor-onboarding"
+  ],
+  "retrieval_keywords": [
+   "due diligence",
+   "vendor verification",
+   "payment",
+   "onboarding"
+  ],
+  "intent_category": "compliance_rule",
+  "reasoning_notes": "Policy compliance question about vendor vetting requirements.",
+  "test_case_id": "TC_057"
+ },
+ {
+  "question": "How many days per week are employees allowed to work from home?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "3 days per week",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "work from home",
+   "frequency",
+   "policy"
+  ],
+  "intent_category": "policy_information",
+  "reasoning_notes": "Straightforward question about remote work allowance frequency.",
+  "test_case_id": "TC_058"
+ },
+ {
+  "question": "What security tool is required when accessing company systems from outside the office?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "Corporate VPN",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "VPN",
+   "remote work security",
+   "company laptops",
+   "requirements"
+  ],
+  "intent_category": "security_policy",
+  "reasoning_notes": "Security requirement question about remote work infrastructure.",
+  "test_case_id": "TC_059"
+ },
+ {
+  "question": "How long can an employee stay in another country before needing special approval from tax and legal teams?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "14 days",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "international work",
+   "tax review",
+   "legal review",
+   "remote work"
+  ],
+  "intent_category": "compliance_rule",
+  "reasoning_notes": "Policy threshold question about international remote work duration limits.",
+  "test_case_id": "TC_060"
+ },
+ {
+  "question": "How often can employees work from home each week?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "up to 3 days per week",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "work from home",
+   "days per week",
+   "remote policy"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Direct factual question about remote work frequency. Single span answer from remote-work chunk. Natural phrasing avoids verbatim copying.",
+  "test_case_id": "TC_061"
+ },
+ {
+  "question": "What's the deadline for turning in an expense report after you incur the expense?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "within 30 days of the expense date",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "expense report",
+   "submission deadline",
+   "30 days",
+   "expense date"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Straightforward question about expense submission timeframe. Single span answer from expense-submission chunk. Colloquial phrasing differs from source text.",
+  "test_case_id": "TC_062"
+ },
+ {
+  "question": "When do employees need to notify compliance about a conflict of interest?",
+  "question_type": "Factoid",
+  "difficulty": "Easy",
+  "expected_answer": "within 5 business days of arising",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "disclosure",
+   "compliance",
+   "5 business days"
+  ],
+  "intent_category": "Policy Clarification",
+  "reasoning_notes": "Direct factual question about conflict of interest disclosure timeline. Single span answer from conflict-interest chunk. Natural wording avoids exact phrase matching.",
+  "test_case_id": "TC_063"
+ },
+ {
+  "question": "If I bought a thank you gift for a client worth $75, what do I need to do with it?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must record the gift in the gift register because it exceeds the $50 threshold for registration, even though it's under the $100 maximum limit for client gifts.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "registration",
+   "recording",
+   "gift value",
+   "threshold"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires understanding two rules: the $100 cap and the $50 registration threshold, then applying both to a specific scenario.",
+  "test_case_id": "TC_064"
+ },
+ {
+  "question": "I'm planning to work from Canada for 20 days next month. What additional steps might be needed?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You need to undergo tax and legal review because working from another country for more than 14 days requires this review before you can proceed.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "another country",
+   "14 days",
+   "tax review",
+   "legal review"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires comparing the 20-day plan against the 14-day threshold to determine what approval is needed.",
+  "test_case_id": "TC_065"
+ },
+ {
+  "question": "I drove 150 miles for a client meeting and 8 miles to my regular office. How much mileage can I claim?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You can only claim 150 miles at $0.62 per mile, which equals $93. The 8 miles to your regular office cannot be reimbursed because commuting to your regular office is not reimbursable.",
+  "ground_truth_context_ids": [
+   "mileage"
+  ],
+  "retrieval_keywords": [
+   "mileage reimbursement",
+   "commuting",
+   "regular office",
+   "reimbursable miles",
+   "rate per mile"
+  ],
+  "intent_category": "Expense Calculation",
+  "reasoning_notes": "Requires identifying which miles qualify for reimbursement and calculating the amount using the $0.62 rate.",
+  "test_case_id": "TC_066"
+ },
+ {
+  "question": "I submitted an expense report for $2,100 on January 5th. When should I expect payment?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You need manager approval first since the report exceeds $2,000. Once approved, payment will come in the next bi-weekly payroll cycle after approval.",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "expense report",
+   "2000 dollars",
+   "manager approval",
+   "payment",
+   "payroll cycle"
+  ],
+  "intent_category": "Expense Processing",
+  "reasoning_notes": "Requires recognizing that the $2,100 amount triggers the approval requirement before determining payment timing.",
+  "test_case_id": "TC_067"
+ },
+ {
+  "question": "My client gift is worth $45. Do I need to register it anywhere?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, you do not need to register it because it is below the $50 threshold for gift registration, though it is still within the $100 maximum limit for client gifts.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "gift register",
+   "50 dollars",
+   "registration requirement"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires understanding that registration is only required above $50, not for all gifts under $100.",
+  "test_case_id": "TC_068"
+ },
+ {
+  "question": "I work from home 2 days a week and want to add another remote day. Can I do this?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Yes, you can work remotely 3 days per week total, so adding one more day to your current 2 days would bring you to 3 days, which is within the policy limit.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "days per week",
+   "work from home",
+   "policy limit"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires comparing current remote work usage against the 3-day-per-week maximum.",
+  "test_case_id": "TC_069"
+ },
+ {
+  "question": "I'm claiming 200 miles for business travel. What documents should I prepare?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You need to prepare a trip log that includes your start and end locations for the 200 miles of business travel.",
+  "ground_truth_context_ids": [
+   "mileage"
+  ],
+  "retrieval_keywords": [
+   "mileage claim",
+   "trip log",
+   "start location",
+   "end location",
+   "documentation"
+  ],
+  "intent_category": "Expense Documentation",
+  "reasoning_notes": "Requires identifying the required documentation for mileage reimbursement claims.",
+  "test_case_id": "TC_070"
+ },
+ {
+  "question": "I want to give a $110 gift to a client. Is this allowed?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, this is not allowed because client gifts cannot exceed $100 in value.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "100 dollars",
+   "maximum value",
+   "gift limit"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires comparing the proposed gift amount to the $100 maximum threshold.",
+  "test_case_id": "TC_071"
+ },
+ {
+  "question": "I submitted an expense report worth $1,800 on February 1st. How long do I have to submit it, and will it need approval?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "The 30-day submission deadline applies to when you incurred the expense, not when you submit it. Since the report is $1,800, it does not require manager approval because it's below the $2,000 threshold.",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "expense report",
+   "30 days",
+   "submission deadline",
+   "manager approval",
+   "2000 dollars"
+  ],
+  "intent_category": "Expense Processing",
+  "reasoning_notes": "Requires applying both the submission deadline rule and the approval threshold rule to a specific scenario.",
+  "test_case_id": "TC_072"
+ },
+ {
+  "question": "I need to work remotely from Mexico for 16 days. What's required before I can do this?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must complete tax and legal review because working from another country for more than 14 days requires this review. Additionally, you must use the corporate VPN on your company laptop while working remotely.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "another country",
+   "14 days",
+   "tax review",
+   "legal review",
+   "corporate VPN"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires identifying that 16 days exceeds the 14-day threshold and combining multiple remote work requirements.",
+  "test_case_id": "TC_073"
+ },
+ {
+  "question": "If I want to give a client a nice pen set worth 75 bucks, do I need to document it anywhere?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Yes, you must record it in the gift register because gifts above 50 dollars require documentation, even though it's within the 100 dollar limit for client gifts.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "documentation",
+   "recording",
+   "gift register",
+   "50 dollars",
+   "value threshold"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires applying two tiered rules: first checking if gift is allowed (under 100), then determining if recording is needed (over 50). Tests understanding of conditional thresholds.",
+  "test_case_id": "TC_074"
+ },
+ {
+  "question": "Our team wants to purchase office supplies totaling 950 dollars. What's the quickest way to process this?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You can use a corporate card since the purchase is under 1000 dollars, which is the threshold for card purchases.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "purchase",
+   "corporate card",
+   "1000 dollars",
+   "procurement",
+   "spending limit"
+  ],
+  "intent_category": "Procurement Process",
+  "reasoning_notes": "Requires identifying which procurement tier applies based on amount and determining the corresponding process. Tests threshold comparison logic.",
+  "test_case_id": "TC_075"
+ },
+ {
+  "question": "I'm buying equipment that costs 18,500 dollars. How many quotes do I need to get?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You need two competitive quotes because the purchase falls in the 1000 to 25000 dollar range, which requires dual quotation.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "quotes",
+   "competitive bids",
+   "procurement",
+   "18500 dollars",
+   "equipment purchase"
+  ],
+  "intent_category": "Procurement Process",
+  "reasoning_notes": "Requires identifying the correct procurement tier and extracting the corresponding requirement. Tests range-based threshold logic.",
+  "test_case_id": "TC_076"
+ },
+ {
+  "question": "If someone reports a concern through the ethics hotline, when should they expect to hear back?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Reports submitted through the ethics hotline are acknowledged within 5 business days.",
+  "ground_truth_context_ids": [
+   "whistleblowing"
+  ],
+  "retrieval_keywords": [
+   "ethics hotline",
+   "report",
+   "acknowledgment",
+   "5 business days",
+   "response time"
+  ],
+  "intent_category": "Whistleblowing Process",
+  "reasoning_notes": "Requires extracting a specific timeline requirement and applying it to a scenario. Tests understanding of procedural timelines.",
+  "test_case_id": "TC_077"
+ },
+ {
+  "question": "Can we give a 120 dollar gift basket to one of our major clients?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, this is not permitted because client gifts cannot exceed 100 dollars in value.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "value limit",
+   "100 dollars",
+   "gift policy",
+   "maximum"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires comparing a proposed amount against a stated maximum threshold and determining compliance. Tests simple boundary logic.",
+  "test_case_id": "TC_078"
+ },
+ {
+  "question": "We need to send customer data to our partner office in another country. What do we need to do first?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must conduct a transfer assessment before moving personal data outside approved regions, as data transfers outside approved regions require this assessment.",
+  "ground_truth_context_ids": [
+   "data-privacy"
+  ],
+  "retrieval_keywords": [
+   "data transfer",
+   "personal data",
+   "approved regions",
+   "transfer assessment",
+   "international"
+  ],
+  "intent_category": "Data Privacy",
+  "reasoning_notes": "Requires identifying a prerequisite action before proceeding with data transfer. Tests understanding of conditional requirements.",
+  "test_case_id": "TC_079"
+ },
+ {
+  "question": "A customer asks for their personal information within our system. How long do we have to provide it?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You have 30 days to respond to data subject access requests and provide the requested personal information.",
+  "ground_truth_context_ids": [
+   "data-privacy"
+  ],
+  "retrieval_keywords": [
+   "data subject access request",
+   "personal information",
+   "30 days",
+   "response deadline",
+   "data access"
+  ],
+  "intent_category": "Data Privacy",
+  "reasoning_notes": "Requires extracting and applying a specific regulatory timeline to a customer scenario. Tests recall of procedural deadlines.",
+  "test_case_id": "TC_080"
+ },
+ {
+  "question": "Is it acceptable to give a government official a 60 dollar thank-you gift for their assistance?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, gifts to government officials are prohibited regardless of the amount, so this is not acceptable.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "government official",
+   "gift",
+   "prohibited",
+   "policy",
+   "compliance"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires recognizing a categorical prohibition that overrides other gift rules. Tests understanding of absolute versus conditional restrictions.",
+  "test_case_id": "TC_081"
+ },
+ {
+  "question": "We're planning to order furniture for 32,000 dollars. What procurement process applies?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "A formal tender process is required because the purchase exceeds 25,000 dollars.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "formal tender",
+   "32000 dollars",
+   "procurement process",
+   "large purchase",
+   "threshold"
+  ],
+  "intent_category": "Procurement Process",
+  "reasoning_notes": "Requires identifying the highest procurement tier and its corresponding process. Tests threshold comparison with largest category.",
+  "test_case_id": "TC_082"
+ },
+ {
+  "question": "If we give a client a 55 dollar gift, what additional step must we take?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must record the gift in the gift register because it exceeds the 50 dollar threshold requiring documentation.",
+  "ground_truth_context_ids": [
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "gift register",
+   "55 dollars",
+   "record",
+   "documentation requirement",
+   "client gift"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires applying a specific rule to determine if documentation is needed based on amount threshold. Tests conditional logic application.",
+  "test_case_id": "TC_083"
+ },
+ {
+  "question": "If I want to take three weeks off next month, how much notice do I need to give?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You need to provide 30 days notice because three weeks equals 21 consecutive days, which exceeds the 10-day threshold that triggers the 30-day notice requirement.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "leave notice",
+   "consecutive days",
+   "advance notice",
+   "time off request"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying that 21 days > 10 days threshold and applying the corresponding notice rule.",
+  "test_case_id": "TC_084"
+ },
+ {
+  "question": "I'm a full-time employee and didn't use 8 days of my annual leave this year. How many days can I actually roll over?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You can only carry over 5 days into the next year because the policy allows a maximum of 5 unused days to be carried forward, even though you have 8 unused days.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "unused leave",
+   "carryover",
+   "rollover",
+   "leftover days"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires comparing actual unused days (8) against the maximum carryover limit (5) and applying the constraint.",
+  "test_case_id": "TC_085"
+ },
+ {
+  "question": "Our team needs to buy equipment worth $18,000. What's the procurement process we should follow?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You need to obtain two competitive quotes because the purchase amount of $18,000 falls within the 1000 to 25000 dollar range that requires this process.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "procurement",
+   "quotes",
+   "purchase amount",
+   "spending threshold"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying the correct spending bracket ($1000-$25000) and applying the corresponding procurement requirement.",
+  "test_case_id": "TC_086"
+ },
+ {
+  "question": "A new employee just joined our company. By what date should we have finalized their performance goals?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Performance goals should be agreed within 30 days of the employee's joining date.",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "new hire",
+   "performance goals",
+   "onboarding timeline",
+   "30 days"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires extracting the specific timeline requirement from onboarding procedures.",
+  "test_case_id": "TC_087"
+ },
+ {
+  "question": "We received a data subject access request yesterday. When's our deadline to respond?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must respond within 30 days from when you received the request, so your deadline is 30 days from yesterday.",
+  "ground_truth_context_ids": [
+   "data-privacy"
+  ],
+  "retrieval_keywords": [
+   "data subject access",
+   "DSAR",
+   "response deadline",
+   "compliance timeline"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires applying the 30-day response window to a specific request date.",
+  "test_case_id": "TC_088"
+ },
+ {
+  "question": "Can I use my corporate card to buy office supplies worth $900?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Yes, you can use your corporate card because $900 is under the $1000 threshold for corporate card purchases.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "corporate card",
+   "spending limit",
+   "purchase threshold",
+   "office supplies"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires comparing purchase amount ($900) against the corporate card threshold ($1000) to determine approval.",
+  "test_case_id": "TC_089"
+ },
+ {
+  "question": "A new team member started last week and will be here for their first three months. Should they have a buddy assigned?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Yes, they should have a buddy assigned because new joiners receive a buddy for the first 90 days, and three months equals approximately 90 days.",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "new joiner",
+   "buddy system",
+   "90 days",
+   "onboarding support"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires recognizing that three months aligns with the 90-day buddy assignment period.",
+  "test_case_id": "TC_090"
+ },
+ {
+  "question": "We want to purchase software for $32,500. What procurement approach should we take?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must follow a formal tender process because the purchase amount of $32,500 exceeds the $25,000 threshold.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "formal tender",
+   "high value purchase",
+   "procurement process",
+   "spending threshold"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying that $32,500 > $25,000 and applying the formal tender requirement.",
+  "test_case_id": "TC_091"
+ },
+ {
+  "question": "How long is the probation period for someone who just got hired, and when should we check in on their performance goals?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "The probation period lasts 6 months, and performance goals should be agreed within 30 days of joining, which is well before the probation period ends.",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "probation",
+   "new employee",
+   "performance goals",
+   "onboarding timeline"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires combining two onboarding requirements and sequencing them chronologically.",
+  "test_case_id": "TC_092"
+ },
+ {
+  "question": "We need to transfer some customer data to a partner company in a different region. What do we need to do first?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must conduct a transfer assessment first because personal data cannot be transferred outside approved regions without completing a transfer assessment.",
+  "ground_truth_context_ids": [
+   "data-privacy"
+  ],
+  "retrieval_keywords": [
+   "data transfer",
+   "cross-border",
+   "transfer assessment",
+   "approved regions"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying the prerequisite control (transfer assessment) before executing a cross-region data transfer.",
+  "test_case_id": "TC_093"
+ },
+ {
+  "question": "If I want to buy office supplies worth $800, what's the approval process I need to follow?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Since the purchase is under $1000, you can make it directly using a corporate card without requiring competitive quotes or a formal tender process.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "purchase approval",
+   "corporate card",
+   "spending limits",
+   "procurement process"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying the correct spending threshold tier and applying the corresponding rule to determine the appropriate approval method.",
+  "test_case_id": "TC_094"
+ },
+ {
+  "question": "Our team discovered a potential conflict of interest situation last Tuesday. By when do we need to report it to compliance?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You must disclose the conflict to compliance within 5 business days of when it arose, which means by the following Tuesday.",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict disclosure",
+   "compliance reporting",
+   "timeline",
+   "business days"
+  ],
+  "intent_category": "Deadline Calculation",
+  "reasoning_notes": "Requires understanding the 5 business day threshold and calculating when the deadline falls based on the discovery date.",
+  "test_case_id": "TC_095"
+ },
+ {
+  "question": "I'm planning a 12-day vacation next month. What do I need to do before booking my flights?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Since your leave exceeds 10 consecutive days, you must submit your request at least 30 days in advance before your vacation starts.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "leave request",
+   "advance notice",
+   "extended vacation",
+   "approval timeline"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires recognizing that 12 days exceeds the 10-day threshold and applying the 30-day notice requirement rule.",
+  "test_case_id": "TC_096"
+ },
+ {
+  "question": "We need equipment that costs $18,500. What procurement steps are mandatory?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Since the cost falls between $1000 and $25,000, you must obtain and compare at least two competitive quotes before proceeding.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "procurement thresholds",
+   "competitive quotes",
+   "equipment purchase",
+   "spending tier"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying the mid-range spending category and determining the corresponding competitive bidding requirement.",
+  "test_case_id": "TC_097"
+ },
+ {
+  "question": "I own shares in a potential client company. Can I work on their account?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, you cannot work on engagements for entities in which you hold shares, as this constitutes a conflict of interest that must be avoided.",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "shareholding",
+   "engagement restrictions",
+   "client relationships"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires applying the shareholding conflict rule to determine work eligibility on a specific engagement.",
+  "test_case_id": "TC_098"
+ },
+ {
+  "question": "If I have 8 unused leave days at year-end, how many can I roll over?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You can carry over a maximum of 5 unused leave days into the next year, so only 5 of your 8 days would transfer; the remaining 3 days would be forfeited.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "unused leave",
+   "carryover limit",
+   "year-end",
+   "leave accrual"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires applying the 5-day carryover cap to a scenario with 8 unused days and calculating the outcome.",
+  "test_case_id": "TC_099"
+ },
+ {
+  "question": "I'm planning to work from Canada for three weeks. What needs to happen before I go?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Since you'll be working from another country for more than 14 days, you must arrange for tax and legal review before your trip to ensure compliance.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "international remote work",
+   "tax review",
+   "legal compliance",
+   "cross-border work"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires recognizing that 21 days exceeds the 14-day threshold and identifying the required tax and legal review process.",
+  "test_case_id": "TC_100"
+ },
+ {
+  "question": "A contractor wants to buy office furniture for $32,000. What's the procurement route?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Since the purchase exceeds $25,000, a formal tender process is required rather than just getting quotes.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "formal tender",
+   "high-value purchases",
+   "procurement process",
+   "spending threshold"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying that the amount crosses the highest spending threshold and applying the formal tender requirement.",
+  "test_case_id": "TC_101"
+ },
+ {
+  "question": "I need to work from my home office 4 days a week on a regular basis. Is this allowed?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, the policy only permits up to 3 days per week of remote work, so working 4 days weekly would exceed the allowed limit.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work frequency",
+   "work-from-home limit",
+   "weekly days",
+   "remote policy"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires comparing the requested schedule against the 3-day maximum and determining non-compliance.",
+  "test_case_id": "TC_102"
+ },
+ {
+  "question": "I just realized I should have declared my side consulting business. How urgently should I fix this?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "You should declare it to compliance immediately, as the policy requires conflicts to be disclosed within 5 business days of when they arise.",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "outside business",
+   "conflict declaration",
+   "disclosure deadline",
+   "compliance reporting"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires understanding the 5-business-day disclosure window and recognizing the urgency of reporting an undisclosed external interest.",
+  "test_case_id": "TC_103"
+ },
+ {
+  "question": "If an employee discovers they have a financial stake in a client company on a Tuesday, by what day must they notify the compliance team?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "By the following Tuesday (5 business days from Tuesday = Wednesday, Thursday, Friday, Monday, Tuesday). The employee must disclose the conflict to compliance within 5 business days of it arising.",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "disclosure",
+   "compliance",
+   "business days",
+   "5 days",
+   "notification deadline"
+  ],
+  "intent_category": "policy_compliance_calculation",
+  "reasoning_notes": "Requires calculating a 5 business day deadline from a specific day of the week, applying the conflict disclosure rule to a concrete scenario.",
+  "test_case_id": "TC_104"
+ },
+ {
+  "question": "A vendor contract is being negotiated for $150,000. What steps must be completed before any payment can be made?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "The vendor must pass due diligence checks and the contract must undergo legal review. Since the contract amount exceeds $100,000, legal review is required. Additionally, due diligence is mandatory for all new vendors before first payment.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding"
+  ],
+  "retrieval_keywords": [
+   "vendor contract",
+   "legal review",
+   "due diligence",
+   "payment",
+   "$100,000 threshold",
+   "vendor onboarding"
+  ],
+  "intent_category": "threshold_based_requirement",
+  "reasoning_notes": "Applies the $100,000 contract threshold rule to determine that legal review is needed, combined with the mandatory due diligence requirement for new vendors.",
+  "test_case_id": "TC_105"
+ },
+ {
+  "question": "Why would a company be unable to delete certain client records even if they're 8 years old?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "If those records are under legal hold, they must not be deleted regardless of the retention period. Although client engagement records are normally retained for 7 years, legal hold status overrides this policy.",
+  "ground_truth_context_ids": [
+   "data-retention"
+  ],
+  "retrieval_keywords": [
+   "data retention",
+   "legal hold",
+   "deletion",
+   "client records",
+   "retention period override"
+  ],
+  "intent_category": "policy_exception_reasoning",
+  "reasoning_notes": "Requires understanding that legal hold is an exception to standard retention periods and applying this to explain why old records would be preserved.",
+  "test_case_id": "TC_106"
+ },
+ {
+  "question": "An employee wants to work on a project for a company where they own stock. Can they proceed, and why or why not?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, they cannot proceed. The conflict of interest policy explicitly prohibits employees from working on engagements for entities in which they hold shares.",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "shares",
+   "stock ownership",
+   "work restriction",
+   "engagement"
+  ],
+  "intent_category": "policy_restriction_application",
+  "reasoning_notes": "Applies the shareholding restriction rule to a concrete scenario to determine eligibility for engagement work.",
+  "test_case_id": "TC_107"
+ },
+ {
+  "question": "If a company receives an email from a client on January 15, 2024, when is the earliest date they can safely delete that email under normal circumstances?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "January 15, 2027 (3 years later). Email correspondence is retained for 3 years, so the email can be deleted after that period expires.",
+  "ground_truth_context_ids": [
+   "data-retention"
+  ],
+  "retrieval_keywords": [
+   "email retention",
+   "3 years",
+   "deletion date",
+   "email correspondence",
+   "retention policy"
+  ],
+  "intent_category": "retention_period_calculation",
+  "reasoning_notes": "Requires calculating a 3-year retention period from a specific date to determine when deletion is permitted.",
+  "test_case_id": "TC_108"
+ },
+ {
+  "question": "A new vendor's bank account information needs to be updated. What security measure must be taken?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Phone verification with a known contact must be completed. This is the required security measure for any vendor bank details changes.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding"
+  ],
+  "retrieval_keywords": [
+   "vendor bank details",
+   "phone verification",
+   "known contact",
+   "security measure",
+   "bank account change"
+  ],
+  "intent_category": "security_procedure_application",
+  "reasoning_notes": "Applies the vendor bank detail change procedure to determine what verification is required.",
+  "test_case_id": "TC_109"
+ },
+ {
+  "question": "How frequently do corporate account passwords need to be changed?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Every 180 days. Passwords must be rotated on this schedule to comply with the password policy.",
+  "ground_truth_context_ids": [
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "password rotation",
+   "180 days",
+   "password policy",
+   "corporate accounts",
+   "frequency"
+  ],
+  "intent_category": "policy_requirement_identification",
+  "reasoning_notes": "Requires identifying the specific password rotation frequency from policy and explaining the compliance requirement.",
+  "test_case_id": "TC_110"
+ },
+ {
+  "question": "What happens if an employee forgets to declare an outside business interest by the annual deadline?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "According to the conflict of interest policy, employees must declare outside business interests annually. Failure to do so would violate this requirement, potentially creating undisclosed conflicts that should have been reported to compliance.",
+  "ground_truth_context_ids": [
+   "conflict-interest"
+  ],
+  "retrieval_keywords": [
+   "outside business interests",
+   "annual declaration",
+   "conflict of interest",
+   "disclosure requirement"
+  ],
+  "intent_category": "compliance_violation_reasoning",
+  "reasoning_notes": "Applies the annual declaration requirement to reason about the consequences of non-compliance.",
+  "test_case_id": "TC_111"
+ },
+ {
+  "question": "A contract worth $99,500 is being finalized with a vendor. Does it need to go through legal review?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, legal review is not required. The policy specifies that vendor contracts above $100,000 require legal review. Since this contract is below that threshold, it does not need legal review.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding"
+  ],
+  "retrieval_keywords": [
+   "vendor contract",
+   "legal review",
+   "$100,000 threshold",
+   "contract amount",
+   "below threshold"
+  ],
+  "intent_category": "threshold_exception_reasoning",
+  "reasoning_notes": "Requires understanding the $100,000 threshold and determining that a contract just below it does not trigger the legal review requirement.",
+  "test_case_id": "TC_112"
+ },
+ {
+  "question": "What are the minimum requirements for a corporate account password to be considered compliant?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "A compliant password must contain at least 14 characters and multi-factor authentication must be enabled. Additionally, the password must be rotated every 180 days.",
+  "ground_truth_context_ids": [
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "password requirements",
+   "14 characters",
+   "multi-factor authentication",
+   "MFA",
+   "password complexity",
+   "corporate accounts"
+  ],
+  "intent_category": "security_requirement_synthesis",
+  "reasoning_notes": "Requires combining multiple password policy requirements to explain comprehensive compliance criteria.",
+  "test_case_id": "TC_113"
+ },
+ {
+  "question": "If an employee takes sick leave for 4 days straight, what documentation would they need to provide?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "They would need to provide a medical certificate because the policy requires one after 3 consecutive sick days, and 4 days exceeds that threshold.",
+  "ground_truth_context_ids": [
+   "leave-sick"
+  ],
+  "retrieval_keywords": [
+   "sick leave",
+   "consecutive days",
+   "medical certificate",
+   "documentation"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires comparing the number of consecutive days (4) against the threshold (3) to determine when medical documentation becomes mandatory.",
+  "test_case_id": "TC_114"
+ },
+ {
+  "question": "A colleague spent $30 on lunch and wants to get reimbursed. Do they need to show itemized details on their receipt?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Yes, they need to provide itemized details because the meal expense policy requires itemization for receipts over $25.",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal reimbursement",
+   "receipt",
+   "itemized",
+   "$25 threshold"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires comparing the meal amount ($30) against the itemization threshold ($25) to determine documentation requirements.",
+  "test_case_id": "TC_115"
+ },
+ {
+  "question": "Can an employee work from a different country for 3 weeks and just proceed with their normal routine?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, they cannot proceed normally. Working from another country for more than 14 days requires tax and legal review before they can do so.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "another country",
+   "14 days",
+   "tax",
+   "legal review"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires recognizing that 3 weeks (21 days) exceeds the 14-day threshold, triggering mandatory tax and legal review.",
+  "test_case_id": "TC_116"
+ },
+ {
+  "question": "If a Severity 1 security issue is discovered at 3 PM, by what time must leadership be briefed?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "By 5 PM that same day, since Severity 1 incidents require an executive briefing within 2 hours of discovery.",
+  "ground_truth_context_ids": [
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "security incident",
+   "Severity 1",
+   "executive briefing",
+   "2 hours"
+  ],
+  "intent_category": "Time-Sensitive Compliance",
+  "reasoning_notes": "Requires calculating a deadline by adding 2 hours to a specific time point (3 PM + 2 hours = 5 PM).",
+  "test_case_id": "TC_117"
+ },
+ {
+  "question": "An employee submits a meal receipt for $28 with just a total amount listed. Will this be approved for reimbursement?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, it will not be approved because the receipt is over $25 and must include itemized details showing what was purchased.",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal expense",
+   "receipt",
+   "itemized",
+   "reimbursement approval"
+  ],
+  "intent_category": "Policy Enforcement",
+  "reasoning_notes": "Requires applying the $25 threshold rule to determine that itemization is mandatory for this specific receipt amount.",
+  "test_case_id": "TC_118"
+ },
+ {
+  "question": "How many days of sick leave can an employee accumulate by the end of the year if they use none?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "They cannot accumulate any unused sick days because the policy states that sick leave does not carry over to the next year.",
+  "ground_truth_context_ids": [
+   "leave-sick"
+  ],
+  "retrieval_keywords": [
+   "sick leave",
+   "carry over",
+   "accumulate",
+   "year end"
+  ],
+  "intent_category": "Policy Understanding",
+  "reasoning_notes": "Requires understanding the no-carryover rule and applying it to determine the outcome of unused leave.",
+  "test_case_id": "TC_119"
+ },
+ {
+  "question": "Can an employee claim a $45 dinner expense for reimbursement?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, the meal expense policy caps reimbursement at $50 per day per employee, but this single meal of $45 would exceed the daily limit when combined with other meals, and more importantly, exceeds typical meal thresholds.",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal reimbursement",
+   "$50 per day",
+   "expense limit"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires recognizing that a $45 meal is close to the $50 daily cap and determining reimbursability based on the policy limit.",
+  "test_case_id": "TC_120"
+ },
+ {
+  "question": "If a security incident occurs on a Monday morning, when must the post-incident review be finished?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Within 10 business days, which would be by the following Friday or the following Monday depending on the exact timing.",
+  "ground_truth_context_ids": [
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "security incident",
+   "post-incident review",
+   "10 business days"
+  ],
+  "intent_category": "Deadline Calculation",
+  "reasoning_notes": "Requires applying the 10 business day rule to determine the completion deadline from a specific start date.",
+  "test_case_id": "TC_121"
+ },
+ {
+  "question": "Is an employee allowed to work remotely 4 days in a single week?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, the remote work policy limits employees to a maximum of 3 days per week working remotely, so 4 days would violate the policy.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work",
+   "3 days per week",
+   "policy limit"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires comparing a proposed schedule (4 days) against the stated maximum (3 days) to determine compliance.",
+  "test_case_id": "TC_122"
+ },
+ {
+  "question": "Can an employee include wine with their meal and request reimbursement for the total?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "No, alcohol is never reimbursable under the meal policy, so any portion of the receipt covering alcohol cannot be reimbursed.",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal expense",
+   "alcohol",
+   "reimbursable",
+   "policy"
+  ],
+  "intent_category": "Policy Restriction",
+  "reasoning_notes": "Requires understanding the absolute prohibition on alcohol reimbursement and applying it to a specific scenario.",
+  "test_case_id": "TC_123"
+ },
+ {
+  "question": "If a team member wants to purchase some equipment that costs $15,000, what steps do they need to follow before making that buy?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "Since the purchase is between $1,000 and $25,000, the employee must obtain two competitive quotes before proceeding with the purchase.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "purchase amount",
+   "competitive quotes",
+   "procurement rules",
+   "$15,000",
+   "spending limits"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires identifying the correct spending bracket ($1,000-$25,000) and applying the corresponding procurement rule (two quotes needed).",
+  "test_case_id": "TC_124"
+ },
+ {
+  "question": "An employee discovers they have a cloud computing instance that hasn't been used in over two weeks. What should happen to that resource according to company policy?",
+  "question_type": "Complex/Reasoning",
+  "difficulty": "Medium",
+  "expected_answer": "According to cloud spend governance, idle compute resources are shut down after 14 days of inactivity. Since the instance has been unused for over two weeks, it should be shut down.",
+  "ground_truth_context_ids": [
+   "cloud-spend"
+  ],
+  "retrieval_keywords": [
+   "idle resources",
+   "compute instances",
+   "14 days",
+   "cloud infrastructure",
+   "shutdown policy"
+  ],
+  "intent_category": "Policy Application",
+  "reasoning_notes": "Requires comparing the inactivity duration (over 2 weeks) against the policy threshold (14 days) to determine the action that should be taken.",
+  "test_case_id": "TC_125"
+ },
+ {
+  "question": "What are the restrictions I need to follow if I want to use my work laptop while traveling abroad for an extended period?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "If working from another country for more than 14 days, you need tax and legal review. Additionally, your company laptop must use the corporate VPN when working remotely.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "international work",
+   "working abroad",
+   "cross-border",
+   "VPN requirement",
+   "tax review",
+   "laptop security"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires combining remote work duration limits with another country requirements (remote-work) and VPN/security protocols (security-devices)",
+  "test_case_id": "TC_126"
+ },
+ {
+  "question": "What security measures should I implement on my laptop before I can work from home three days a week?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Before working remotely, your laptop must have full-disk encryption enabled. Additionally, when working remotely, you must use the corporate VPN, and personal USB storage devices are prohibited.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "remote work setup",
+   "encryption",
+   "VPN",
+   "device security",
+   "laptop preparation"
+  ],
+  "intent_category": "Security Configuration",
+  "reasoning_notes": "Combines remote work policy allowances (remote-work) with mandatory device security requirements (security-devices)",
+  "test_case_id": "TC_127"
+ },
+ {
+  "question": "If my work laptop gets stolen while I'm working remotely from a cafe, what should I do and what policies apply?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "You must report the lost device within 4 hours. Additionally, since you were working remotely, you should have had full-disk encryption enabled on your laptop and been using the corporate VPN.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "stolen device",
+   "lost laptop",
+   "reporting procedure",
+   "incident response",
+   "remote work security"
+  ],
+  "intent_category": "Incident Management",
+  "reasoning_notes": "Requires understanding device loss reporting timeline (security-devices) combined with remote work security requirements (remote-work)",
+  "test_case_id": "TC_128"
+ },
+ {
+  "question": "What's the maximum frequency I can work from home, and what technical setup is needed to do so securely?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "You can work remotely up to 3 days per week. Your laptop must have full-disk encryption enabled and use the corporate VPN when working remotely.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "remote work frequency",
+   "days per week",
+   "encryption",
+   "VPN",
+   "secure connection"
+  ],
+  "intent_category": "Policy and Security",
+  "reasoning_notes": "Combines remote work frequency limits (remote-work) with device security and VPN requirements (security-devices)",
+  "test_case_id": "TC_129"
+ },
+ {
+  "question": "Are there any restrictions on what storage devices I can use with my work laptop while working off-site?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Personal USB storage devices are prohibited on corporate laptops. Additionally, when working remotely, you must ensure your laptop has full-disk encryption enabled and use the corporate VPN.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "USB storage",
+   "external devices",
+   "portable storage",
+   "off-site work",
+   "data security"
+  ],
+  "intent_category": "Data Protection",
+  "reasoning_notes": "Requires combining device restrictions (security-devices) with remote work context (remote-work)",
+  "test_case_id": "TC_130"
+ },
+ {
+  "question": "What compliance checks do I need before I can work from my vacation home in another country for three weeks?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Working from another country for more than 14 days requires tax and legal review. You must also ensure your laptop has full-disk encryption enabled and use the corporate VPN when working remotely.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "international work",
+   "extended travel",
+   "tax compliance",
+   "legal review",
+   "encryption",
+   "VPN"
+  ],
+  "intent_category": "Compliance and Security",
+  "reasoning_notes": "Combines international work duration threshold (remote-work) with mandatory device security measures (security-devices)",
+  "test_case_id": "TC_131"
+ },
+ {
+  "question": "If I want to work remotely three days a week, what happens if I lose my device and what preventative security should I have had in place?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "You must report a lost device within 4 hours. To prevent data loss, your laptop should have had full-disk encryption enabled. When working remotely, you must also use the corporate VPN and cannot use personal USB storage devices.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "device loss",
+   "lost laptop",
+   "encryption",
+   "remote work security",
+   "preventative measures"
+  ],
+  "intent_category": "Risk Mitigation",
+  "reasoning_notes": "Requires understanding device loss procedures (security-devices) and remote work security requirements (remote-work)",
+  "test_case_id": "TC_132"
+ },
+ {
+  "question": "What are all the technical requirements my laptop needs to meet for me to work from home?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Your laptop must have full-disk encryption enabled. When working remotely, you must use the corporate VPN. Personal USB storage devices are prohibited on corporate laptops.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "laptop requirements",
+   "technical setup",
+   "encryption",
+   "VPN",
+   "device configuration"
+  ],
+  "intent_category": "Technical Requirements",
+  "reasoning_notes": "Combines all device security requirements (security-devices) with remote work connectivity requirements (remote-work)",
+  "test_case_id": "TC_133"
+ },
+ {
+  "question": "Can I extend my remote work arrangement to work from abroad for a month, and what security measures must be in place?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Working from another country for more than 14 days requires tax and legal review, so a month would need approval. Your laptop must have full-disk encryption enabled and use the corporate VPN when working remotely.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "extended international work",
+   "tax review",
+   "legal approval",
+   "encryption",
+   "VPN security"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires combining international work approval threshold (remote-work) with mandatory security measures (security-devices)",
+  "test_case_id": "TC_134"
+ },
+ {
+  "question": "What should I do to protect my data if I'm working remotely three days per week and my laptop gets misplaced?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Report the misplaced device within 4 hours. Your data should be protected by the full-disk encryption that must be enabled on your laptop. Additionally, you should have been using the corporate VPN during remote work sessions.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "data protection",
+   "device loss",
+   "encryption",
+   "remote work",
+   "incident reporting"
+  ],
+  "intent_category": "Data Security",
+  "reasoning_notes": "Combines device loss reporting requirements (security-devices) with remote work security practices (remote-work)",
+  "test_case_id": "TC_135"
+ },
+ {
+  "question": "If a manager wants to give a client a gift worth $75, what steps do they need to take beyond just getting approval?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The gift must be recorded in the gift register since it exceeds $50 in value. The manager can approve spending up to $5000, so the gift amount itself doesn't require higher approval, but the registration requirement must be fulfilled.",
+  "ground_truth_context_ids": [
+   "client-gifts",
+   "approval-matrix"
+  ],
+  "retrieval_keywords": [
+   "client gift",
+   "register",
+   "recording",
+   "manager approval",
+   "spending limit"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires understanding both the gift value threshold for registration (from client-gifts) and the manager's spending authority (from approval-matrix) to determine what documentation is needed.",
+  "test_case_id": "TC_136"
+ },
+ {
+  "question": "Can a director approve a $45000 client gift, and if so, would it need to be registered?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "No, a director cannot approve a $45000 client gift because gifts to clients cannot exceed $100 in value regardless of spending approval authority. The gift value limit is a separate policy from spending approval limits.",
+  "ground_truth_context_ids": [
+   "client-gifts",
+   "approval-matrix"
+  ],
+  "retrieval_keywords": [
+   "director approval",
+   "gift limit",
+   "client hospitality",
+   "spending authority",
+   "maximum value"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires distinguishing between spending approval authority (approval-matrix) and specific gift value restrictions (client-gifts) to understand that gift rules override general spending approvals.",
+  "test_case_id": "TC_137"
+ },
+ {
+  "question": "If spending of $60000 needs approval, who can authorize it, and could this amount be used for a client gift instead?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The partner committee must approve spending of $60000 since it exceeds $50000. This amount cannot be used for a client gift because client gifts are limited to a maximum of $100 regardless of spending authority.",
+  "ground_truth_context_ids": [
+   "approval-matrix",
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "partner committee",
+   "spending approval",
+   "client gift",
+   "maximum limit",
+   "authorization"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires combining approval authority levels with gift restrictions to show that even though high spending can be approved, it cannot override the separate client gift value cap.",
+  "test_case_id": "TC_138"
+ },
+ {
+  "question": "What's the relationship between a manager's spending authority and the requirement to record client gifts?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "A manager can approve spending up to $5000, but for client gifts, the value limit is $100 maximum, and any gift over $50 must be recorded in the gift register. The spending authority doesn't override the gift-specific restrictions.",
+  "ground_truth_context_ids": [
+   "approval-matrix",
+   "client-gifts"
+  ],
+  "retrieval_keywords": [
+   "manager authority",
+   "gift registry",
+   "spending limit",
+   "recording requirement",
+   "client gift"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires understanding that gift policies operate independently of general spending approval hierarchies to clarify how these two policies interact.",
+  "test_case_id": "TC_139"
+ },
+ {
+  "question": "How do the gift registration threshold and spending approval limits interact for a $55 client gift?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The $55 gift must be recorded in the gift register because it exceeds $50. A manager can approve it since $55 is within their $5000 spending authority, but the registration requirement is mandatory regardless of approval level.",
+  "ground_truth_context_ids": [
+   "client-gifts",
+   "approval-matrix"
+  ],
+  "retrieval_keywords": [
+   "gift registration",
+   "threshold",
+   "manager approval",
+   "recording",
+   "spending authority"
+  ],
+  "intent_category": "Policy Compliance",
+  "reasoning_notes": "Requires understanding that the $50 registration threshold is separate from both the $100 gift limit and spending approval authority, showing how multiple policies apply to the same transaction.",
+  "test_case_id": "TC_140"
+ },
+ {
+  "question": "What are the encryption and reporting requirements if someone's work laptop goes missing while they're traveling?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The laptop must have full-disk encryption enabled. The loss must be reported to the security operations center within 4 hours.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "laptop encryption",
+   "stolen device",
+   "reporting requirements",
+   "security incident",
+   "lost device"
+  ],
+  "intent_category": "Security Policy Compliance",
+  "reasoning_notes": "Requires combining device encryption policy with incident reporting procedures. User must understand both what protection should be in place and the immediate action needed.",
+  "test_case_id": "TC_141"
+ },
+ {
+  "question": "If an employee works remotely from abroad for over two weeks and their computer gets compromised, what procedures apply?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The extended international remote work requires tax and legal review. The security compromise must be reported immediately to the security operations center, and if it's a Severity 1 incident, an executive briefing is needed within 2 hours.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "remote work abroad",
+   "security breach",
+   "incident response",
+   "executive briefing",
+   "international work"
+  ],
+  "intent_category": "Incident Management",
+  "reasoning_notes": "Combines remote work duration restrictions with incident severity escalation procedures. Requires understanding both policies to address the scenario completely.",
+  "test_case_id": "TC_142"
+ },
+ {
+  "question": "What protective measures and access controls should be in place for someone connecting to work systems from outside the office?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The laptop must have full-disk encryption enabled. When working remotely, the company laptop must use the corporate VPN. Additionally, multi-factor authentication is mandatory for all corporate accounts.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "remote access",
+   "VPN requirement",
+   "encryption",
+   "multi-factor authentication",
+   "security controls"
+  ],
+  "intent_category": "Security Best Practices",
+  "reasoning_notes": "Requires synthesizing device encryption, VPN usage, and authentication policies. Addresses the layered security approach for remote access.",
+  "test_case_id": "TC_143"
+ },
+ {
+  "question": "What happens to someone's account credentials if they're working remotely, and how often do they need to update them?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Multi-factor authentication is mandatory for all corporate accounts. Passwords must be rotated every 180 days and contain at least 14 characters.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "remote work authentication",
+   "password rotation",
+   "credential management",
+   "MFA",
+   "password requirements"
+  ],
+  "intent_category": "Access Control Policy",
+  "reasoning_notes": "Combines remote work context with password and authentication policies. Requires understanding both where work happens and how credentials are managed.",
+  "test_case_id": "TC_144"
+ },
+ {
+  "question": "What's the complete security setup required for someone who wants to work from another country for a month?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Extended work from another country for more than 14 days requires tax and legal review. The laptop must have full-disk encryption enabled and use the corporate VPN when working remotely. Multi-factor authentication is mandatory for all corporate accounts.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "international remote work",
+   "extended travel",
+   "security setup",
+   "VPN",
+   "encryption",
+   "legal review"
+  ],
+  "intent_category": "Complex Policy Navigation",
+  "reasoning_notes": "Requires combining international work approval, device security, VPN usage, and authentication policies. Tests comprehensive policy understanding.",
+  "test_case_id": "TC_145"
+ },
+ {
+  "question": "When should a data breach be escalated to leadership, and what technical safeguards should have prevented it?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Severity 1 incidents require an executive briefing within 2 hours. Technical safeguards should have included full-disk encryption on the laptop, corporate VPN usage for remote connections, and multi-factor authentication on corporate accounts.",
+  "ground_truth_context_ids": [
+   "security-incident",
+   "security-devices",
+   "remote-work",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "security breach",
+   "executive escalation",
+   "incident severity",
+   "preventive measures",
+   "encryption",
+   "MFA"
+  ],
+  "intent_category": "Security Incident Prevention and Response",
+  "reasoning_notes": "Combines incident response timelines with preventive security measures. Requires understanding both reactive and proactive security policies.",
+  "test_case_id": "TC_146"
+ },
+ {
+  "question": "What credentials and device protections are needed if someone works remotely three days a week?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The company laptop must use the corporate VPN when working remotely. The laptop must have full-disk encryption enabled. Multi-factor authentication is mandatory for all corporate accounts.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "remote work frequency",
+   "VPN",
+   "encryption",
+   "authentication",
+   "security requirements"
+  ],
+  "intent_category": "Remote Work Security",
+  "reasoning_notes": "Combines frequency-based remote work permissions with corresponding security controls. Tests understanding of layered security for distributed work.",
+  "test_case_id": "TC_147"
+ },
+ {
+  "question": "How should a lost device be handled, and what immediate actions must security take?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Lost or stolen devices must be reported within 4 hours. The incident must be reported to the security operations center immediately. If it's classified as a Severity 1 incident, an executive briefing is required within 2 hours.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "lost device",
+   "stolen laptop",
+   "incident reporting",
+   "security operations",
+   "device loss protocol"
+  ],
+  "intent_category": "Device Loss Protocol",
+  "reasoning_notes": "Connects device loss procedures with incident response escalation. Requires understanding both device-specific and general incident management policies.",
+  "test_case_id": "TC_148"
+ },
+ {
+  "question": "An employee on an international assignment in a tier 1 country where meals are catered should claim how much per diem daily, and when should they submit this claim?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "They should claim 67.50 dollars per day (90 dollars reduced by 25 percent), submitted with the expense report.",
+  "ground_truth_context_ids": [
+   "per-diem",
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "international per diem",
+   "tier 1 countries",
+   "meals provided",
+   "reduction percentage",
+   "expense report submission",
+   "per diem claim timing"
+  ],
+  "intent_category": "International Travel Reimbursement",
+  "reasoning_notes": "Requires calculating the reduced per diem (meals provided reduces by 25%) and knowing submission method from expense-submission.",
+  "test_case_id": "TC_149"
+ },
+ {
+  "question": "What's the difference in daily allowance between a tier 1 international per diem with and without meal provision, and how does this compare to the maximum meal reimbursement policy?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Tier 1 per diem is 90 dollars without meals and 67.50 dollars with meals (a 22.50 dollar difference). The maximum daily meal reimbursement is 50 dollars, which is less than the per diem with meals.",
+  "ground_truth_context_ids": [
+   "per-diem",
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "international per diem",
+   "tier 1 countries",
+   "meal provision",
+   "per diem reduction",
+   "meal reimbursement cap",
+   "daily allowance comparison"
+  ],
+  "intent_category": "Policy Comparison",
+  "reasoning_notes": "Requires calculating per diem with and without meals, then comparing to domestic meal policy limits.",
+  "test_case_id": "TC_150"
+ },
+ {
+  "question": "An employee books a 5-hour flight without seeking approval and submits a 1500-dollar expense report 20 days later\u2014is there any issue with their submission?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Yes, they should have booked economy class for a 5-hour flight (under 6 hours), but no manager approval was needed since the report is under 2000 dollars and was submitted within the 30-day window.",
+  "ground_truth_context_ids": [
+   "travel-booking",
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "flight booking rules",
+   "economy class requirement",
+   "flight duration threshold",
+   "expense report submission timeline",
+   "manager approval threshold"
+  ],
+  "intent_category": "Compliance Verification",
+  "reasoning_notes": "Combines flight class rules with expense report submission requirements to identify the specific compliance issue.",
+  "test_case_id": "TC_151"
+ },
+ {
+  "question": "An employee is traveling and wants to know both their daily living allowance in a tier 1 country and the meal expense limit\u2014what are these two amounts?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The international per diem in tier 1 countries is 90 dollars per day, and the meal expense reimbursement limit is 50 dollars per day per employee.",
+  "ground_truth_context_ids": [
+   "per-diem",
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "per diem",
+   "tier 1",
+   "meal reimbursement",
+   "daily limits",
+   "employee allowance"
+  ],
+  "intent_category": "Travel Budget Planning",
+  "reasoning_notes": "Requires combining per diem policy from one chunk with meal expense limits from another chunk to provide complete travel allowance picture.",
+  "test_case_id": "TC_152"
+ },
+ {
+  "question": "An employee traveling to a tier 1 country with company-provided meals needs to know their daily living stipend and the separate meal reimbursement limit\u2014what should they expect?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "With meals provided, the per diem would be 67.50 dollars per day (90 dollars reduced by 25 percent). Additionally, meal expenses are reimbursable up to 50 dollars per day per employee.",
+  "ground_truth_context_ids": [
+   "per-diem",
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "tier 1 countries",
+   "per diem",
+   "meals provided",
+   "meal reimbursement",
+   "daily allowance",
+   "living stipend"
+  ],
+  "intent_category": "Travel Expense Planning",
+  "reasoning_notes": "Requires combining per diem reduction policy when meals are provided with separate meal reimbursement limits to give complete picture of employee's financial coverage.",
+  "test_case_id": "TC_153"
+ },
+ {
+  "question": "What are the key security requirements a new employee needs to satisfy during their first two weeks, considering both their initial setup and mandatory compliance training?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "New employees must receive a laptop on their first day and complete security awareness training within 14 days of joining. Additionally, they must adhere to password policies requiring at least 14 characters and multi-factor authentication for their corporate accounts.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "new joiner",
+   "security training",
+   "laptop setup",
+   "password requirements",
+   "multi-factor authentication",
+   "14 days",
+   "first day"
+  ],
+  "intent_category": "onboarding_security_compliance",
+  "reasoning_notes": "Requires combining new joiner IT setup procedures with password and authentication policies to understand complete first-week/two-week security onboarding requirements.",
+  "test_case_id": "TC_154"
+ },
+ {
+  "question": "If a new employee's laptop is misplaced on their second day, what immediate actions should be taken and what are the underlying security measures that should have been in place?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The lost device must be reported to the security operations center within 4 hours. The laptop should have had full-disk encryption enabled as a preventative security measure before being issued to the employee.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "onboarding-it"
+  ],
+  "retrieval_keywords": [
+   "lost device",
+   "stolen laptop",
+   "report within 4 hours",
+   "full-disk encryption",
+   "device security",
+   "new joiner"
+  ],
+  "intent_category": "device_security_incident",
+  "reasoning_notes": "Connects device security policies (encryption requirement and reporting timeline) with the onboarding process to understand what should have been configured before the device was given to the new employee.",
+  "test_case_id": "TC_155"
+ },
+ {
+  "question": "What is the relationship between password rotation requirements and the account provisioning timeline for new employees?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "New employee account provisioning is completed within 2 business days. Once provisioned, passwords must contain at least 14 characters and be rotated every 180 days according to password policy.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "account provisioning",
+   "password rotation",
+   "180 days",
+   "2 business days",
+   "password policy",
+   "new joiners"
+  ],
+  "intent_category": "account_lifecycle_security",
+  "reasoning_notes": "Requires understanding both the provisioning timeline and subsequent password management requirements to see how they work together in the employee lifecycle.",
+  "test_case_id": "TC_156"
+ },
+ {
+  "question": "How do device encryption standards and incident reporting procedures work together to protect company data when equipment goes missing?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "All laptops must have full-disk encryption enabled to protect data. When a device is lost or stolen, it must be reported to the security operations center immediately within 4 hours to ensure rapid response and mitigation.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "full-disk encryption",
+   "lost device",
+   "stolen device",
+   "4 hours",
+   "security operations center",
+   "incident reporting"
+  ],
+  "intent_category": "data_protection_incident_management",
+  "reasoning_notes": "Combines preventative security measures (encryption) with reactive incident response procedures to show how they provide layered protection for company data.",
+  "test_case_id": "TC_157"
+ },
+ {
+  "question": "What critical security actions must occur within the first two weeks of an employee joining, and how do they relate to the company's authentication requirements?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Within 14 days of joining, employees must complete security awareness training. Their corporate accounts must have multi-factor authentication enabled and passwords must meet the requirement of at least 14 characters.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "security awareness training",
+   "14 days",
+   "multi-factor authentication",
+   "corporate accounts",
+   "password requirements",
+   "new employee"
+  ],
+  "intent_category": "security_onboarding_authentication",
+  "reasoning_notes": "Requires linking the training timeline with authentication policies to understand the integrated security posture expected of new employees.",
+  "test_case_id": "TC_158"
+ },
+ {
+  "question": "How do the account provisioning timeline and security incident response procedures align in terms of time-critical operational requirements?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Account provisioning for new employees is completed within 2 business days. Security incidents must be reported immediately, with Severity 1 incidents requiring executive briefing within 2 hours, demonstrating different urgency levels for operational versus security-critical timeframes.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "account provisioning",
+   "2 business days",
+   "security incident",
+   "immediately",
+   "2 hours",
+   "Severity 1",
+   "executive briefing"
+  ],
+  "intent_category": "operational_security_timelines",
+  "reasoning_notes": "Requires comparing provisioning timelines with incident response SLAs to understand how the organization prioritizes different types of time-sensitive activities.",
+  "test_case_id": "TC_159"
+ },
+ {
+  "question": "What multi-layered security approach is implemented for corporate laptops from issuance through potential loss?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "New joiners receive laptops on their first day with full-disk encryption enabled. If a laptop is lost or stolen, it must be reported within 4 hours to the security operations center. The encryption protects data even if the device is compromised.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "security-devices",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "laptop",
+   "new joiners",
+   "full-disk encryption",
+   "lost device",
+   "stolen",
+   "4 hours",
+   "security operations center"
+  ],
+  "intent_category": "device_lifecycle_security",
+  "reasoning_notes": "Requires synthesizing information about device provisioning, preventative security measures, and incident response to understand the complete device security lifecycle.",
+  "test_case_id": "TC_160"
+ },
+ {
+  "question": "What are the combined security compliance requirements for a new employee's account and the device they receive?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "New employees receive a laptop with full-disk encryption enabled on day one. Their accounts must have multi-factor authentication enabled and passwords must be at least 14 characters long, with rotation every 180 days. Security awareness training must be completed within 14 days.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "security-passwords",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "new employee",
+   "laptop",
+   "multi-factor authentication",
+   "password",
+   "14 characters",
+   "full-disk encryption",
+   "security training"
+  ],
+  "intent_category": "comprehensive_security_onboarding",
+  "reasoning_notes": "Requires combining account security policies, device security policies, and onboarding procedures to present a complete picture of new employee security requirements.",
+  "test_case_id": "TC_161"
+ },
+ {
+  "question": "How do password management policies and post-incident procedures ensure security continuity after a potential breach?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Passwords must be rotated every 180 days and contain at least 14 characters to maintain security. After a security incident, post-incident reviews are completed within 10 business days, which may trigger password resets and policy adjustments to prevent future breaches.",
+  "ground_truth_context_ids": [
+   "security-passwords",
+   "security-incident"
+  ],
+  "retrieval_keywords": [
+   "password rotation",
+   "180 days",
+   "password policy",
+   "security incident",
+   "post-incident review",
+   "10 business days",
+   "breach prevention"
+  ],
+  "intent_category": "incident_recovery_security",
+  "reasoning_notes": "Requires linking preventative password policies with post-incident procedures to understand how the organization maintains security before and after potential security events.",
+  "test_case_id": "TC_162"
+ },
+ {
+  "question": "What's the process if a manager wants to buy software that costs $30,000 and needs to use it with a client?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The manager would need director approval since the spending is above $5,000 but below $50,000. Additionally, if it's open source software, legal must review it before using it in client deliverables. The purchase also requires two competitive quotes since it's between $1,000 and $25,000.",
+  "ground_truth_context_ids": [
+   "approval-matrix",
+   "software-licenses",
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "manager approval",
+   "director approval",
+   "software purchase",
+   "open source license",
+   "legal review",
+   "client deliverables",
+   "competitive quotes",
+   "$30,000"
+  ],
+  "intent_category": "Compliance and Process Navigation",
+  "reasoning_notes": "Requires combining approval authority limits, software license requirements, and procurement thresholds. The answer involves three separate policies: who approves, what happens with open source software, and how purchasing is governed by amount.",
+  "test_case_id": "TC_163"
+ },
+ {
+  "question": "If we're bringing on a new vendor for a $60,000 contract, what checks need to happen before we can pay them?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The new vendor must pass a due diligence check before the first payment can be made. Additionally, since the contract is above $50,000, it requires partner committee approval for spending authorization. However, since the contract is below $100,000, legal review of the vendor contract is not required.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding",
+   "approval-matrix"
+  ],
+  "retrieval_keywords": [
+   "new vendor",
+   "due diligence",
+   "first payment",
+   "contract approval",
+   "$60,000",
+   "partner committee",
+   "vendor onboarding"
+  ],
+  "intent_category": "Vendor Management and Approval",
+  "reasoning_notes": "Combines vendor onboarding requirements with approval matrix thresholds. Must identify that due diligence is mandatory and that committee approval is needed for spending above $50,000.",
+  "test_case_id": "TC_164"
+ },
+ {
+  "question": "A director wants to spend $45,000 on open source software for a project. What approvals and reviews are required?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The director can approve this spending themselves since it's under $50,000. However, the software installation requires IT service desk approval. Additionally, since it's open source software intended for use, legal must review it before it can be deployed. The purchase also falls in the range requiring two competitive quotes.",
+  "ground_truth_context_ids": [
+   "approval-matrix",
+   "software-licenses",
+   "procurement-thresholds"
+  ],
+  "retrieval_keywords": [
+   "director approval",
+   "open source software",
+   "legal review",
+   "IT service desk",
+   "installation approval",
+   "competitive quotes",
+   "$45,000"
+  ],
+  "intent_category": "Software Procurement and Compliance",
+  "reasoning_notes": "Requires understanding director approval authority, open source license review requirements, IT approval for installations, and procurement quote thresholds. Multiple approval paths must be identified.",
+  "test_case_id": "TC_165"
+ },
+ {
+  "question": "If someone needs to purchase a $15,000 software license but doesn't know if it's open source, what's the full process they should follow?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "First, they need to get two competitive quotes since the purchase is between $1,000 and $25,000. They need manager or director approval depending on their authority level. The software installation requires IT service desk approval. If it turns out to be open source, legal must review it before use. If unused, the license will be reclaimed after 90 days of inactivity.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds",
+   "approval-matrix",
+   "software-licenses"
+  ],
+  "retrieval_keywords": [
+   "software license",
+   "$15,000",
+   "competitive quotes",
+   "approval",
+   "IT service desk",
+   "open source",
+   "legal review",
+   "unused license",
+   "90 days"
+  ],
+  "intent_category": "Software Procurement Workflow",
+  "reasoning_notes": "Multi-step process combining procurement thresholds, approval authority, IT requirements, and software license policies. Demonstrates the complete lifecycle from purchase to potential reclamation.",
+  "test_case_id": "TC_166"
+ },
+ {
+  "question": "What are all the steps needed before paying a brand new vendor for a $80,000 purchase that uses open source components?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The new vendor must pass due diligence checks before any payment. The $80,000 spending requires partner committee approval since it exceeds $50,000. The purchase requires two competitive quotes since it's above $1,000. If open source components are involved, legal must review them before use. The vendor contract itself does not require legal review since it's below $100,000.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding",
+   "approval-matrix",
+   "procurement-thresholds",
+   "software-licenses"
+  ],
+  "retrieval_keywords": [
+   "new vendor",
+   "due diligence",
+   "payment",
+   "$80,000",
+   "committee approval",
+   "open source",
+   "legal review",
+   "competitive quotes",
+   "vendor contract"
+  ],
+  "intent_category": "Complex Vendor and Procurement Management",
+  "reasoning_notes": "Requires synthesizing four different policies: vendor onboarding, approval thresholds, procurement rules, and software licensing. Must identify which requirements apply and which don't.",
+  "test_case_id": "TC_167"
+ },
+ {
+  "question": "Can a manager directly approve and purchase $8,000 worth of software with a corporate card, or is there more to it?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "No, they cannot use a corporate card since purchases above $1,000 require two competitive quotes. While the manager can approve the $8,000 spending themselves, they still need to obtain two competitive quotes. Additionally, the software installation requires IT service desk approval regardless of the purchase method.",
+  "ground_truth_context_ids": [
+   "procurement-thresholds",
+   "approval-matrix",
+   "software-licenses"
+  ],
+  "retrieval_keywords": [
+   "corporate card",
+   "manager approval",
+   "$8,000",
+   "competitive quotes",
+   "software",
+   "IT service desk",
+   "installation"
+  ],
+  "intent_category": "Procurement Policy Clarification",
+  "reasoning_notes": "Shows the interaction between payment method restrictions, approval authority, and software approval requirements. Clarifies that manager approval doesn't bypass procurement thresholds.",
+  "test_case_id": "TC_168"
+ },
+ {
+  "question": "What needs to happen if a vendor we're paying $75,000 per year wants to update their contract terms and change their payment bank account?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The vendor bank details change requires phone verification with a known contact. The updated contract terms would require spending approval at the partner committee level since $75,000 exceeds the $50,000 director threshold. However, legal review of the contract is not required since it's below $100,000.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding",
+   "approval-matrix"
+  ],
+  "retrieval_keywords": [
+   "vendor contract",
+   "bank account change",
+   "phone verification",
+   "$75,000",
+   "committee approval",
+   "spending approval",
+   "vendor update"
+  ],
+  "intent_category": "Vendor Contract Management",
+  "reasoning_notes": "Combines vendor security procedures with spending approval requirements. Must identify that phone verification applies to bank changes and that spending approval thresholds apply to contract value.",
+  "test_case_id": "TC_169"
+ },
+ {
+  "question": "If a director approves $35,000 for an open source software project, what other approvals or checks are still needed?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The director's approval is sufficient for the spending authority. However, the purchase still requires two competitive quotes since it's between $1,000 and $25,000. The software installation requires IT service desk approval. Legal must review the open source license before the software can be used in any capacity.",
+  "ground_truth_context_ids": [
+   "approval-matrix",
+   "procurement-thresholds",
+   "software-licenses"
+  ],
+  "retrieval_keywords": [
+   "director approval",
+   "$35,000",
+   "open source",
+   "competitive quotes",
+   "IT service desk",
+   "legal review",
+   "software installation"
+  ],
+  "intent_category": "Multi-Policy Approval Workflow",
+  "reasoning_notes": "Demonstrates that director approval authority doesn't eliminate other procedural requirements. Combines spending approval with procurement thresholds and software licensing policies.",
+  "test_case_id": "TC_170"
+ },
+ {
+  "question": "What's the complete checklist before a new vendor can receive their first payment for a $150,000 contract involving software licenses?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "The new vendor must pass due diligence checks. The $150,000 spending requires partner committee approval since it exceeds $50,000. The vendor contract requires legal review since it's above $100,000. If the contract involves software licenses, those installations require IT service desk approval. If any software is open source, legal must review the licenses before use. The purchase requires two competitive quotes.",
+  "ground_truth_context_ids": [
+   "vendor-onboarding",
+   "approval-matrix",
+   "procurement-thresholds",
+   "software-licenses"
+  ],
+  "retrieval_keywords": [
+   "new vendor",
+   "first payment",
+   "$150,000",
+   "due diligence",
+   "committee approval",
+   "legal review",
+   "contract",
+   "software license",
+   "IT approval",
+   "open source",
+   "competitive quotes"
+  ],
+  "intent_category": "Comprehensive Vendor and Procurement Compliance",
+  "reasoning_notes": "Requires integrating all four policies to create a complete pre-payment checklist. Most complex scenario involving highest contract value with multiple policy intersections.",
+  "test_case_id": "TC_171"
+ },
+ {
+  "question": "How long does someone have to finish their security training after starting, and when would their initial performance goals need to be locked in?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Security awareness training must be completed within 14 days of joining, and performance goals are agreed within 30 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "security training",
+   "onboarding",
+   "performance goals",
+   "new employee",
+   "timeline",
+   "14 days",
+   "30 days"
+  ],
+  "intent_category": "Onboarding Requirements",
+  "reasoning_notes": "Requires combining IT onboarding requirements (security training deadline) with HR onboarding requirements (performance goal timeline) to answer what happens in the first month for a new joiner.",
+  "test_case_id": "TC_172"
+ },
+ {
+  "question": "If someone gets the lowest performance rating, what's the relationship between that outcome and the buddy support they received when they started?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "Employees rated 1 on the five-point scale enter a 90-day improvement plan. New joiners are assigned a buddy for the first 90 days, which is the same duration as the improvement plan for low performers.",
+  "ground_truth_context_ids": [
+   "onboarding-hr",
+   "performance-review"
+  ],
+  "retrieval_keywords": [
+   "lowest rating",
+   "improvement plan",
+   "buddy",
+   "90 days",
+   "performance",
+   "new joiner support"
+  ],
+  "intent_category": "Performance Management",
+  "reasoning_notes": "Connects the buddy support period during onboarding (90 days) with the improvement plan duration for employees receiving the lowest performance rating (also 90 days), requiring cross-referencing two different policies.",
+  "test_case_id": "TC_173"
+ },
+ {
+  "question": "During the first three months of employment, what IT and HR support mechanisms are in place, and how do their timeframes compare?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "New joiners receive a laptop on day one and are assigned an HR buddy for 90 days. Account provisioning is completed within 2 business days, and security training must be finished within 14 days. The buddy support spans the entire 90-day probation period, while IT setup is completed much faster.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "first 90 days",
+   "buddy support",
+   "laptop",
+   "account provisioning",
+   "security training",
+   "onboarding support"
+  ],
+  "intent_category": "Onboarding Coordination",
+  "reasoning_notes": "Requires synthesizing information from both IT and HR onboarding policies to compare timelines and identify all support mechanisms available in the early employment period.",
+  "test_case_id": "TC_174"
+ },
+ {
+  "question": "When would an employee need to request time off if they wanted to take a three-week vacation, and does this align with their probation period constraints?",
+  "question_type": "Multi-Hop",
+  "difficulty": "Hard",
+  "expected_answer": "A three-week vacation (21 days) exceeds 10 consecutive days, so 30 days notice is required. This would need to be planned well in advance. The probation period is 6 months, so an employee could technically request this after probation ends, though the notice requirement applies regardless of tenure.",
+  "ground_truth_context_ids": [
+   "leave-annual",
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "three weeks vacation",
+   "leave request notice",
+   "consecutive days",
+   "probation period",
+   "time off planning"
+  ],
+  "intent_category": "Leave Planning",
+  "reasoning_notes": "Combines leave policy notice requirements (30 days for >10 consecutive days) with onboarding probation information to advise on when extended time off can be taken relative to employment stage.",
+  "test_case_id": "TC_175"
+ },
+ {
+  "question": "What are the main guidelines I need to follow when booking flights for work trips?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Flights must be booked at least 14 days in advance. Economy class is required for flights under 6 hours. Business class is permitted for flights longer than 6 hours, but this requires director approval.",
+  "ground_truth_context_ids": [
+   "travel-booking"
+  ],
+  "retrieval_keywords": [
+   "flight booking rules",
+   "advance booking",
+   "class requirements",
+   "director approval"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "User asks for main guidelines on flight booking in natural language. Answer synthesizes all three rules from the travel-booking chunk without verbatim copying.",
+  "test_case_id": "TC_176"
+ },
+ {
+  "question": "Can you walk me through what's allowed and what's not for meal expenses?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Meals are reimbursable up to 50 dollars per day per employee. Alcohol is never reimbursable. Receipts for meals above 25 dollars must be itemized.",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal reimbursement",
+   "daily limit",
+   "alcohol policy",
+   "itemized receipts"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "Question uses casual phrasing asking for allowances and restrictions. Answer covers all three key meal policy points in synthesized form.",
+  "test_case_id": "TC_177"
+ },
+ {
+  "question": "How does the per diem system work for international travel, including any adjustments?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "International per diem is 90 dollars per day in tier 1 countries. The amount is reduced by 25 percent when meals are provided. Per diem claims are submitted along with the expense report.",
+  "ground_truth_context_ids": [
+   "per-diem"
+  ],
+  "retrieval_keywords": [
+   "international per diem",
+   "tier 1 countries",
+   "meal reduction",
+   "expense report submission"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "User asks about per diem system with adjustments. Answer integrates base rate, reduction mechanism, and submission process without direct copying.",
+  "test_case_id": "TC_178"
+ },
+ {
+  "question": "What should I know about submitting expense reports after a business trip?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Expense reports must be submitted within 30 days of the expense date. Reports exceeding 2000 dollars require manager approval before payment. Once approved, expense reports are paid in the next bi-weekly payroll cycle.",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "expense report submission",
+   "30 days",
+   "manager approval",
+   "payroll cycle",
+   "2000 dollars"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "Question uses conversational phrasing about post-trip expense procedures. Answer covers timeline, approval threshold, and payment timing.",
+  "test_case_id": "TC_179"
+ },
+ {
+  "question": "What are the key differences between how you handle meal expenses versus per diem for international trips?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Meal expenses are reimbursed up to 50 dollars per day with itemized receipts required above 25 dollars, and alcohol is not reimbursable. International per diem provides 90 dollars per day in tier 1 countries and is reduced by 25 percent when meals are provided. Both are submitted with the expense report.",
+  "ground_truth_context_ids": [
+   "expense-meals",
+   "per-diem"
+  ],
+  "retrieval_keywords": [
+   "meal expenses",
+   "per diem comparison",
+   "reimbursement limits",
+   "international travel",
+   "itemized receipts"
+  ],
+  "intent_category": "comparative_analysis",
+  "reasoning_notes": "Comparison question across two related policy areas. Answer highlights distinctions in limits, restrictions, and how each handles meal provisions.",
+  "test_case_id": "TC_180"
+ },
+ {
+  "question": "Tell me about the approval and payment process for expense reports across different amounts.",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Expense reports must be submitted within 30 days of the expense date. Reports above 2000 dollars require manager approval before payment. Once approved, expense reports are paid in the next bi-weekly payroll cycle.",
+  "ground_truth_context_ids": [
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "approval process",
+   "expense report",
+   "manager approval",
+   "payment timeline",
+   "threshold"
+  ],
+  "intent_category": "process_flow",
+  "reasoning_notes": "User asks about the approval workflow and payment mechanics. Answer covers submission deadline, approval threshold, and payment timing.",
+  "test_case_id": "TC_181"
+ },
+ {
+  "question": "What restrictions exist around meal spending and how do they affect my reimbursement?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Meals are reimbursable up to 50 dollars per day per employee. Alcohol cannot be reimbursed under any circumstances. Additionally, meal receipts above 25 dollars must be itemized to qualify for reimbursement.",
+  "ground_truth_context_ids": [
+   "expense-meals"
+  ],
+  "retrieval_keywords": [
+   "meal restrictions",
+   "reimbursement limits",
+   "alcohol policy",
+   "documentation requirements"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "Question focuses on constraints and their impact. Answer synthesizes daily limit, prohibited items, and documentation threshold.",
+  "test_case_id": "TC_182"
+ },
+ {
+  "question": "How do the timing requirements work for booking travel and submitting expenses?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Flights must be booked at least 14 days in advance. Expense reports must be submitted within 30 days of the expense date. Once approved, expense reports are paid in the next bi-weekly payroll cycle.",
+  "ground_truth_context_ids": [
+   "travel-booking",
+   "expense-submission"
+  ],
+  "retrieval_keywords": [
+   "booking advance notice",
+   "submission deadline",
+   "payroll cycle",
+   "timing requirements"
+  ],
+  "intent_category": "comparative_analysis",
+  "reasoning_notes": "Cross-chunk summary of timing-related requirements. Compares advance booking window with expense submission and payment timelines.",
+  "test_case_id": "TC_183"
+ },
+ {
+  "question": "What should I understand about class selection when booking flights for work?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Economy class is required for flights under 6 hours. Business class is permitted for flights longer than 6 hours, but only with director approval. All flights must be booked at least 14 days in advance.",
+  "ground_truth_context_ids": [
+   "travel-booking"
+  ],
+  "retrieval_keywords": [
+   "flight class",
+   "economy class",
+   "business class",
+   "flight duration",
+   "director approval"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "Question focuses on seating class rules. Answer covers class requirements based on flight duration and approval pathway.",
+  "test_case_id": "TC_184"
+ },
+ {
+  "question": "How does providing meals to employees impact their per diem entitlements for international assignments?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "International per diem is 90 dollars per day in tier 1 countries. When meals are provided to employees, the per diem is reduced by 25 percent. Per diem claims are submitted along with the expense report.",
+  "ground_truth_context_ids": [
+   "per-diem"
+  ],
+  "retrieval_keywords": [
+   "per diem reduction",
+   "meals provided",
+   "international travel",
+   "tier 1 countries"
+  ],
+  "intent_category": "policy_overview",
+  "reasoning_notes": "Question asks about the relationship between meal provision and per diem. Answer explains base rate, reduction percentage, and submission method.",
+  "test_case_id": "TC_185"
+ },
+ {
+  "question": "What are the main differences in parental leave entitlements between the two types of caregivers?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Primary caregivers receive 26 weeks of paid parental leave, while secondary caregivers receive 8 weeks of paid parental leave. Both types must request leave at least 60 days in advance.",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "parental leave",
+   "primary caregiver",
+   "secondary caregiver",
+   "weeks",
+   "paid leave",
+   "caregivers"
+  ],
+  "intent_category": "Policy Comparison",
+  "reasoning_notes": "Compares two caregiver categories within parental leave policy; uses colloquial phrasing 'main differences' rather than listing verbatim.",
+  "test_case_id": "TC_186"
+ },
+ {
+  "question": "How does the company handle unused vacation time from year to year?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Employees can carry over up to 5 unused annual leave days into the following year. Full-time employees accrue 25 days of annual leave per year.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "annual leave",
+   "unused days",
+   "carry over",
+   "next year",
+   "accrual"
+  ],
+  "intent_category": "Leave Carryover",
+  "reasoning_notes": "Summarizes leave carryover policy; uses natural phrasing 'vacation time' and 'year to year' instead of exact terminology.",
+  "test_case_id": "TC_187"
+ },
+ {
+  "question": "What notice period is required for different types of leave requests?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Parental leave requires 60 days notice before the expected start date. For annual leave, requests of more than 10 consecutive days need 30 days notice.",
+  "ground_truth_context_ids": [
+   "leave-parental",
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "notice period",
+   "advance notice",
+   "request",
+   "days",
+   "parental leave",
+   "annual leave"
+  ],
+  "intent_category": "Policy Requirements",
+  "reasoning_notes": "Compares notice requirements across two leave types; uses general phrasing 'notice period' to prompt synthesis.",
+  "test_case_id": "TC_188"
+ },
+ {
+  "question": "Tell me about the paid leave benefits available to new parents at the company.",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "The company offers paid parental leave with primary caregivers receiving 26 weeks and secondary caregivers receiving 8 weeks. Leave must be requested at least 60 days in advance.",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "parental leave",
+   "paid",
+   "new parents",
+   "caregivers",
+   "weeks",
+   "benefits"
+  ],
+  "intent_category": "Benefits Overview",
+  "reasoning_notes": "Summarizes parental leave program; uses conversational phrasing 'new parents' and 'tell me about' to encourage synthesis.",
+  "test_case_id": "TC_189"
+ },
+ {
+  "question": "What are the key rules someone should know about taking time off for parenting?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Primary caregivers get 26 weeks of paid leave and secondary caregivers get 8 weeks of paid leave. The policy requires that leave be requested at least 60 days before the expected start date.",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "parental leave",
+   "rules",
+   "requirements",
+   "caregivers",
+   "advance notice",
+   "weeks"
+  ],
+  "intent_category": "Policy Guidelines",
+  "reasoning_notes": "Summarizes parental leave essentials; uses vague phrasing 'key rules' and 'taking time off' rather than exact policy language.",
+  "test_case_id": "TC_190"
+ },
+ {
+  "question": "How much vacation time can full-time employees accumulate and use annually?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Full-time employees accrue 25 days of annual leave per year. They can carry over up to 5 unused days into the next year, meaning they can effectively use up to 30 days if they had unused days from the previous year.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "annual leave",
+   "full-time",
+   "days",
+   "accrue",
+   "accumulate",
+   "vacation"
+  ],
+  "intent_category": "Leave Accrual",
+  "reasoning_notes": "Summarizes annual leave entitlements; uses synonyms like 'accumulate' and 'vacation time' for natural phrasing.",
+  "test_case_id": "TC_191"
+ },
+ {
+  "question": "What should employees know about planning extended time off?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "For extended annual leave of more than 10 consecutive days, employees need to provide 30 days notice. Parental leave requires 60 days advance notice. Employees accrue 25 days of annual leave per year with up to 5 days carryover.",
+  "ground_truth_context_ids": [
+   "leave-annual",
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "extended leave",
+   "notice",
+   "planning",
+   "consecutive days",
+   "advance"
+  ],
+  "intent_category": "Leave Planning",
+  "reasoning_notes": "Synthesizes notice requirements and accrual across both leave types; uses colloquial 'extended time off' phrasing.",
+  "test_case_id": "TC_192"
+ },
+ {
+  "question": "Summarize the differences in how much time off primary versus secondary caregivers receive.",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Primary caregivers receive 26 weeks of paid parental leave, which is significantly more than secondary caregivers who receive 8 weeks of paid parental leave. Both must request leave at least 60 days in advance.",
+  "ground_truth_context_ids": [
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "parental leave",
+   "primary caregiver",
+   "secondary caregiver",
+   "weeks",
+   "difference",
+   "comparison"
+  ],
+  "intent_category": "Policy Comparison",
+  "reasoning_notes": "Directly compares caregiver leave amounts; uses slightly vague 'summarize the differences' phrasing.",
+  "test_case_id": "TC_193"
+ },
+ {
+  "question": "What's the overall approach to annual leave management at this company?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Full-time employees receive 25 days of annual leave per year. The company allows carrying over up to 5 unused days to the next year. Extended leave requests of more than 10 consecutive days require 30 days notice.",
+  "ground_truth_context_ids": [
+   "leave-annual"
+  ],
+  "retrieval_keywords": [
+   "annual leave",
+   "policy",
+   "management",
+   "days",
+   "carryover",
+   "notice"
+  ],
+  "intent_category": "Policy Overview",
+  "reasoning_notes": "Provides holistic summary of annual leave approach; uses conversational 'overall approach' phrasing.",
+  "test_case_id": "TC_194"
+ },
+ {
+  "question": "How do the company's leave policies balance employee flexibility with advance planning requirements?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "The company offers flexibility by allowing employees to carry over up to 5 annual leave days and providing 25 days of annual leave per year. However, it requires 30 days notice for extended leave of more than 10 consecutive days and 60 days notice for parental leave to ensure proper planning.",
+  "ground_truth_context_ids": [
+   "leave-annual",
+   "leave-parental"
+  ],
+  "retrieval_keywords": [
+   "flexibility",
+   "planning",
+   "notice",
+   "leave policy",
+   "requirements",
+   "balance"
+  ],
+  "intent_category": "Policy Analysis",
+  "reasoning_notes": "Synthesizes both policies to analyze overall balance; uses analytical phrasing to encourage cross-policy understanding.",
+  "test_case_id": "TC_195"
+ },
+ {
+  "question": "What are the main things that happen when someone joins the IT department on their first day?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "New joiners receive a laptop on their first day. Account provisioning requests are completed within 2 business days. Employees must complete security awareness training within 14 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-it"
+  ],
+  "retrieval_keywords": [
+   "new joiner",
+   "first day",
+   "IT setup",
+   "laptop",
+   "account provisioning",
+   "security training"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Summarizes the complete IT onboarding workflow with natural phrasing rather than copying exact text.",
+  "test_case_id": "TC_196"
+ },
+ {
+  "question": "Can you give me an overview of the HR onboarding process for new employees?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "The probation period lasts 6 months. New joiners are assigned a buddy for the first 90 days. Performance goals are agreed within 30 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "HR onboarding",
+   "probation",
+   "buddy system",
+   "performance goals",
+   "new joiners"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Summarizes HR-specific onboarding elements using colloquial phrasing like 'give me an overview'.",
+  "test_case_id": "TC_197"
+ },
+ {
+  "question": "What security requirements apply to passwords in our organization?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Passwords must contain at least 14 characters. Passwords must be rotated every 180 days. Multi-factor authentication is mandatory for all corporate accounts.",
+  "ground_truth_context_ids": [
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "password policy",
+   "security requirements",
+   "character length",
+   "rotation",
+   "multi-factor authentication"
+  ],
+  "intent_category": "security_policy",
+  "reasoning_notes": "Summarizes all password-related security policies using slightly vague 'security requirements' phrasing.",
+  "test_case_id": "TC_198"
+ },
+ {
+  "question": "What's the timeline for getting a new employee up and running from an IT perspective?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "New joiners receive a laptop on their first day. Account provisioning requests are completed within 2 business days. Employees must complete security awareness training within 14 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-it"
+  ],
+  "retrieval_keywords": [
+   "IT onboarding timeline",
+   "account setup",
+   "first day",
+   "business days",
+   "training deadline"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Focuses on temporal aspects of IT onboarding using conversational language.",
+  "test_case_id": "TC_199"
+ },
+ {
+  "question": "How long does someone typically stay in probation and what support do they get during that time?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "The probation period lasts 6 months. New joiners are assigned a buddy for the first 90 days. Performance goals are agreed within 30 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "probation period",
+   "buddy support",
+   "performance goals",
+   "new joiner support"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Combines questions about probation duration and support mechanisms using natural phrasing.",
+  "test_case_id": "TC_200"
+ },
+ {
+  "question": "What are the key technical security measures we need to follow for account access?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Passwords must contain at least 14 characters. Passwords must be rotated every 180 days. Multi-factor authentication is mandatory for all corporate accounts.",
+  "ground_truth_context_ids": [
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "account security",
+   "authentication",
+   "password requirements",
+   "corporate accounts",
+   "MFA"
+  ],
+  "intent_category": "security_policy",
+  "reasoning_notes": "Summarizes password and authentication policies using broader 'technical security measures' framing.",
+  "test_case_id": "TC_201"
+ },
+ {
+  "question": "Outline the different stages and milestones in the first few months for a new hire in HR terms.",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "The probation period lasts 6 months. New joiners are assigned a buddy for the first 90 days. Performance goals are agreed within 30 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "HR milestones",
+   "probation stages",
+   "buddy assignment",
+   "performance goals",
+   "timeline"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Asks for an outline of sequential HR onboarding events without copying exact phrasing.",
+  "test_case_id": "TC_202"
+ },
+ {
+  "question": "What happens during the onboarding process and when do these things occur?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "New joiners receive a laptop on their first day. Account provisioning requests are completed within 2 business days. Employees must complete security awareness training within 14 days of joining. The probation period lasts 6 months. New joiners are assigned a buddy for the first 90 days. Performance goals are agreed within 30 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "onboarding process",
+   "timeline",
+   "IT setup",
+   "HR onboarding",
+   "milestones",
+   "first day"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Cross-section summary combining both IT and HR onboarding using vague 'what happens' phrasing.",
+  "test_case_id": "TC_203"
+ },
+ {
+  "question": "What are the main components of our password and authentication policies?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Passwords must contain at least 14 characters. Passwords must be rotated every 180 days. Multi-factor authentication is mandatory for all corporate accounts.",
+  "ground_truth_context_ids": [
+   "security-passwords"
+  ],
+  "retrieval_keywords": [
+   "password policy",
+   "authentication policy",
+   "MFA",
+   "security compliance",
+   "corporate standards"
+  ],
+  "intent_category": "security_policy",
+  "reasoning_notes": "Summarizes password policy components using 'main components' as colloquial framing.",
+  "test_case_id": "TC_204"
+ },
+ {
+  "question": "Give me a summary of what new employees should expect in their first month regarding both IT and people operations.",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "New joiners receive a laptop on their first day. Account provisioning requests are completed within 2 business days. Employees must complete security awareness training within 14 days of joining. New joiners are assigned a buddy for the first 90 days. Performance goals are agreed within 30 days of joining.",
+  "ground_truth_context_ids": [
+   "onboarding-it",
+   "onboarding-hr"
+  ],
+  "retrieval_keywords": [
+   "first month",
+   "new employee expectations",
+   "IT and HR",
+   "onboarding summary",
+   "buddy",
+   "laptop"
+  ],
+  "intent_category": "onboarding_process",
+  "reasoning_notes": "Combines IT and HR onboarding elements focused on first month using conversational 'give me a summary' phrasing.",
+  "test_case_id": "TC_205"
+ },
+ {
+  "question": "What are the main restrictions employees should know about when working outside the office?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Employees can work remotely up to 3 days per week. If working from another country for more than 14 days, tax and legal review is required. When working remotely, company laptops must connect through the corporate VPN.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "remote work restrictions",
+   "working outside office",
+   "remote work policy",
+   "work from home rules"
+  ],
+  "intent_category": "Policy Overview",
+  "reasoning_notes": "High-level summary of remote work guidelines without verbatim copying; uses colloquial phrasing like 'main restrictions' and 'should know about'",
+  "test_case_id": "TC_206"
+ },
+ {
+  "question": "What security measures need to be in place for company computers?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Company laptops must have full-disk encryption enabled. Personal USB storage devices cannot be used on corporate laptops. Lost or stolen devices need to be reported within 4 hours.",
+  "ground_truth_context_ids": [
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "laptop security",
+   "device protection",
+   "encryption requirements",
+   "corporate device safety"
+  ],
+  "intent_category": "Security Policy Overview",
+  "reasoning_notes": "Summarizes device security requirements using slightly vague phrasing ('security measures need to be in place') rather than copying exact policy language",
+  "test_case_id": "TC_207"
+ },
+ {
+  "question": "How should employees handle their work devices when away from the office?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Employees must use the corporate VPN when working remotely with company laptops. Full-disk encryption must be enabled on all laptops. If a device is lost or stolen, it must be reported within 4 hours. Personal USB devices are not permitted on corporate laptops.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "remote device usage",
+   "laptop security while remote",
+   "working away from office",
+   "portable device protection"
+  ],
+  "intent_category": "Cross-policy Security",
+  "reasoning_notes": "Combines remote work and device security policies; uses natural phrasing like 'handle their work devices' to avoid verbatim copying",
+  "test_case_id": "TC_208"
+ },
+ {
+  "question": "What are the key things employees need to remember about remote work setup?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Employees are allowed to work remotely up to 3 days per week. The corporate VPN must be used when working remotely. International work for more than 14 days requires tax and legal review. Laptops need full-disk encryption enabled, and personal USB storage is not allowed.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "remote work requirements",
+   "work from home setup",
+   "remote access security",
+   "VPN usage"
+  ],
+  "intent_category": "Cross-policy Overview",
+  "reasoning_notes": "Combines both policies with focus on remote work setup; uses conversational tone ('key things to remember')",
+  "test_case_id": "TC_209"
+ },
+ {
+  "question": "What protections are in place for company laptops?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "All company laptops must have full-disk encryption enabled. Personal USB storage devices are prohibited from being used on corporate laptops. When used remotely, laptops must connect through the corporate VPN.",
+  "ground_truth_context_ids": [
+   "security-devices",
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "laptop protection",
+   "device safeguards",
+   "encryption policy",
+   "corporate laptop security"
+  ],
+  "intent_category": "Device Protection Overview",
+  "reasoning_notes": "Summarizes laptop security measures across device and remote work policies using natural phrasing",
+  "test_case_id": "TC_210"
+ },
+ {
+  "question": "What should employees be aware of regarding international work arrangements?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "If an employee plans to work from another country for more than 14 days, tax and legal review is required before doing so.",
+  "ground_truth_context_ids": [
+   "remote-work"
+  ],
+  "retrieval_keywords": [
+   "international work",
+   "working abroad",
+   "cross-border employment",
+   "country work requirements"
+  ],
+  "intent_category": "Policy Requirement",
+  "reasoning_notes": "Focuses on specific aspect of remote work policy; uses slightly vague phrasing like 'should be aware of' rather than direct policy language",
+  "test_case_id": "TC_211"
+ },
+ {
+  "question": "What are the incident response requirements if equipment goes missing?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "If a device is lost or stolen, employees must report it within 4 hours.",
+  "ground_truth_context_ids": [
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "lost device reporting",
+   "stolen equipment",
+   "incident response",
+   "device loss protocol"
+  ],
+  "intent_category": "Security Protocol",
+  "reasoning_notes": "Summarizes incident response requirement using colloquial phrasing 'if equipment goes missing' instead of exact policy wording",
+  "test_case_id": "TC_212"
+ },
+ {
+  "question": "What data protection and usage policies apply to remote workers?",
+  "question_type": "Summary",
+  "difficulty": "Medium",
+  "expected_answer": "Remote workers must use the corporate VPN on their company laptops. Laptops must have full-disk encryption enabled. Personal USB storage devices cannot be used on corporate laptops.",
+  "ground_truth_context_ids": [
+   "remote-work",
+   "security-devices"
+  ],
+  "retrieval_keywords": [
+   "remote worker security",
+   "data protection remote",
+   "VPN policy",
+   "encryption for remote access"
+  ],
+  "intent_category": "Cross-policy Data Protection",
+  "reasoning_notes": "Combines both policies with focus on data protection for remote workers; uses natural phrasing",
+  "test_case_id": "TC_213"
+ },
+ {
+  "question": "What's the company's stance on employees working from home and what equipment do they provide for remote setups?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding remote work policies and equipment provisions for home-based work.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "remote work",
+   "work from home",
+   "home office equipment",
+   "telecommuting",
+   "remote setup"
+  ],
+  "intent_category": "Work Arrangement Policy",
+  "reasoning_notes": "While onboarding-it mentions laptop provision on first day, it does not address remote work policies or ongoing equipment support for remote employees. This is a distinct policy area not covered in the vault chunks.",
+  "test_case_id": "TC_214"
+ },
+ {
+  "question": "How should employees handle a workplace injury or safety incident, and what's the reporting procedure?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding workplace safety incident reporting procedures and injury handling protocols.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "workplace injury",
+   "safety incident",
+   "incident reporting",
+   "accident procedure",
+   "emergency protocol"
+  ],
+  "intent_category": "Safety and Incident Management",
+  "reasoning_notes": "The chunks provided do not cover workplace safety or incident response procedures. Security awareness training is mentioned but not safety-related incidents.",
+  "test_case_id": "TC_215"
+ },
+ {
+  "question": "What are the guidelines for gifting clients or entertaining business partners, and are there spending limits?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding client gift policies and business entertainment expense guidelines.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "client gifts",
+   "business entertainment",
+   "hospitality expenses",
+   "client entertainment budget",
+   "gift guidelines"
+  ],
+  "intent_category": "Business Entertainment Policy",
+  "reasoning_notes": "Expense submission and travel hotel policies are covered, but client gifting and hospitality policies are not addressed in any of the provided chunks.",
+  "test_case_id": "TC_216"
+ },
+ {
+  "question": "Can you explain the mileage reimbursement rates for employees using personal vehicles for business travel?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding mileage reimbursement rates and personal vehicle expense policies.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "mileage reimbursement",
+   "personal vehicle",
+   "car allowance",
+   "mileage rate",
+   "vehicle expenses"
+  ],
+  "intent_category": "Travel Expense Reimbursement",
+  "reasoning_notes": "While hotel travel policies are covered, mileage reimbursement for personal vehicle use is not mentioned in any of the provided chunks.",
+  "test_case_id": "TC_217"
+ },
+ {
+  "question": "What's the company's parental leave entitlement for new mothers and fathers?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding parental leave benefits and entitlements.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "parental leave",
+   "maternity leave",
+   "paternity leave",
+   "newborn",
+   "family leave"
+  ],
+  "intent_category": "Leave and Benefits Policy",
+  "reasoning_notes": "The chunks cover sick leave and annual leave policies, but parental leave is a separate policy area not addressed in the provided documentation.",
+  "test_case_id": "TC_218"
+ },
+ {
+  "question": "How does the company handle data protection and what should employees know about handling sensitive customer information?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding data privacy handling and sensitive information protection protocols.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "data privacy",
+   "data protection",
+   "sensitive information",
+   "customer data",
+   "confidential data handling"
+  ],
+  "intent_category": "Data Protection and Privacy",
+  "reasoning_notes": "Security awareness training is mentioned in onboarding but not data privacy or handling of sensitive customer information specifically.",
+  "test_case_id": "TC_219"
+ },
+ {
+  "question": "What are the company's policies on meal expenses during business travel, and are there daily limits?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding meal expense policies and daily dining allowances during business travel.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "meal expenses",
+   "dining allowance",
+   "food reimbursement",
+   "per diem meals",
+   "daily meal limit"
+  ],
+  "intent_category": "Travel Expense Policy",
+  "reasoning_notes": "Hotel policy is covered but meal expenses and per diem allowances are not addressed in the provided chunks.",
+  "test_case_id": "TC_220"
+ },
+ {
+  "question": "How are performance reviews conducted, and what's the frequency and process for employee evaluations?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding performance review cycles and employee evaluation procedures.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "performance review",
+   "employee evaluation",
+   "appraisal process",
+   "review cycle",
+   "performance assessment"
+  ],
+  "intent_category": "Performance Management",
+  "reasoning_notes": "The chunks focus on leave, expenses, and onboarding but do not cover performance management or review processes.",
+  "test_case_id": "TC_221"
+ },
+ {
+  "question": "What password requirements and security protocols should employees follow for their work accounts?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding password policies and account security requirements.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "password policy",
+   "account security",
+   "password requirements",
+   "password strength",
+   "security protocols"
+  ],
+  "intent_category": "Information Security Policy",
+  "reasoning_notes": "While security awareness training is mentioned in onboarding-it, specific password policies and account security requirements are not detailed in the provided chunks.",
+  "test_case_id": "TC_222"
+ },
+ {
+  "question": "What training budget or professional development funds are available to employees each year?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding training budgets and professional development allowances.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "training budget",
+   "professional development",
+   "learning allowance",
+   "course reimbursement",
+   "development funds"
+  ],
+  "intent_category": "Employee Development",
+  "reasoning_notes": "The chunks cover onboarding training requirements but not ongoing training budgets or professional development funding for employees.",
+  "test_case_id": "TC_223"
+ },
+ {
+  "question": "What's the company's stance on employee stock options and equity compensation?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding employee stock options and equity compensation.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "stock options",
+   "equity",
+   "compensation",
+   "shares",
+   "employee benefits"
+  ],
+  "intent_category": "Compensation Policy",
+  "reasoning_notes": "Question asks about equity compensation which is not covered in any of the provided policy chunks. This is a legitimate business topic but absent from the vault.",
+  "test_case_id": "TC_224"
+ },
+ {
+  "question": "How should I handle a situation where I discover a colleague has been falsifying project timesheets?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding handling timesheet fraud or ethics violations.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "timesheet fraud",
+   "falsifying records",
+   "ethics violation",
+   "misconduct",
+   "reporting"
+  ],
+  "intent_category": "Ethics and Compliance",
+  "reasoning_notes": "While Whistleblowing Policy exists in the vault topics, the provided chunks do not include it. The question is specific and unanswerable from available documentation.",
+  "test_case_id": "TC_225"
+ },
+ {
+  "question": "What are the guidelines for bringing pets to the office or during client meetings?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding pets in the workplace or office policies.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "pets",
+   "animals",
+   "office",
+   "workplace",
+   "client meetings"
+  ],
+  "intent_category": "Workplace Conduct",
+  "reasoning_notes": "Question relates to workplace environment policies not covered in the provided chunks. Workplace Safety is in vault topics but not in provided documentation.",
+  "test_case_id": "TC_226"
+ },
+ {
+  "question": "Can I use my personal laptop for client work instead of a company device?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding personal device usage policies for client work.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "personal laptop",
+   "BYOD",
+   "device policy",
+   "client work",
+   "company equipment"
+  ],
+  "intent_category": "Device and Security Policy",
+  "reasoning_notes": "Device Security Policy exists in vault topics but is not included in the provided chunks. Question cannot be answered from available documentation.",
+  "test_case_id": "TC_227"
+ },
+ {
+  "question": "What's the reimbursement process if I have to pay for emergency childcare due to work obligations?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding childcare expense reimbursement.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "childcare",
+   "emergency care",
+   "reimbursement",
+   "family expenses",
+   "work obligations"
+  ],
+  "intent_category": "Benefits and Reimbursement",
+  "reasoning_notes": "Question relates to family support benefits not covered in any provided chunk. Parental Leave Policy is in vault but not in documentation provided.",
+  "test_case_id": "TC_228"
+ },
+ {
+  "question": "How do I request a sabbatical or extended unpaid leave from the company?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding sabbatical or extended unpaid leave requests.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "sabbatical",
+   "unpaid leave",
+   "extended break",
+   "leave of absence",
+   "time off"
+  ],
+  "intent_category": "Leave Policies",
+  "reasoning_notes": "While Annual Leave and Parental Leave exist in vault topics, the provided chunks do not address sabbaticals or extended unpaid leave options.",
+  "test_case_id": "TC_229"
+ },
+ {
+  "question": "What's the protocol for reporting a security breach involving customer data?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding security breach reporting protocols.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "security breach",
+   "data breach",
+   "incident response",
+   "customer data",
+   "protocol"
+  ],
+  "intent_category": "Security Incident Management",
+  "reasoning_notes": "Security Incident Response is listed in vault topics but not included in provided chunks. Cannot answer from available documentation.",
+  "test_case_id": "TC_230"
+ },
+ {
+  "question": "Are there any restrictions on accepting gifts or entertainment from vendors we work with?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding vendor gifts or entertainment policies.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "vendor gifts",
+   "entertainment",
+   "vendor relations",
+   "conflict of interest",
+   "gift policy"
+  ],
+  "intent_category": "Business Ethics",
+  "reasoning_notes": "Client Gifts and Hospitality and Conflict of Interest exist in vault topics but are not in the provided chunks. Question cannot be answered from available documentation.",
+  "test_case_id": "TC_231"
+ },
+ {
+  "question": "What's the company's policy on flexible working hours or compressed work weeks?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding flexible working hours or compressed work week arrangements.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "flexible hours",
+   "compressed week",
+   "work schedule",
+   "flexible working",
+   "time arrangement"
+  ],
+  "intent_category": "Work Arrangements",
+  "reasoning_notes": "Remote Work Policy exists in vault topics but is not in provided chunks. Question about flexible scheduling cannot be answered from available documentation.",
+  "test_case_id": "TC_232"
+ },
+ {
+  "question": "How much professional development budget am I allocated annually for courses and certifications?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding professional development budget allocation.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "training budget",
+   "professional development",
+   "courses",
+   "certifications",
+   "learning budget"
+  ],
+  "intent_category": "Employee Development",
+  "reasoning_notes": "Training Budget is listed in vault topics but not included in the provided chunks. Cannot determine budget allocation from available documentation.",
+  "test_case_id": "TC_233"
+ },
+ {
+  "question": "What's the process for employees to request a sabbatical or extended unpaid leave?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding sabbatical or extended unpaid leave requests.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "sabbatical",
+   "unpaid leave",
+   "extended leave",
+   "leave of absence"
+  ],
+  "intent_category": "Leave Management",
+  "reasoning_notes": "While annual leave policy is covered, sabbaticals and extended unpaid leave are distinct topics not addressed in the vault.",
+  "test_case_id": "TC_234"
+ },
+ {
+  "question": "How do I go about getting reimbursed for mileage when I drive my personal vehicle for work?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding mileage reimbursement.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "mileage",
+   "personal vehicle",
+   "reimbursement",
+   "car allowance",
+   "driving"
+  ],
+  "intent_category": "Expense Reimbursement",
+  "reasoning_notes": "Mileage reimbursement is listed in the vault topics but not covered in the provided chunks.",
+  "test_case_id": "TC_235"
+ },
+ {
+  "question": "What are the guidelines for giving gifts to our clients or business partners?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding client gifts and hospitality guidelines.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "client gifts",
+   "business gifts",
+   "hospitality",
+   "gift policy",
+   "client entertainment"
+  ],
+  "intent_category": "Client Relations",
+  "reasoning_notes": "Client gifts and hospitality is a vault topic but has no corresponding chunk in the provided documentation.",
+  "test_case_id": "TC_236"
+ },
+ {
+  "question": "Can you tell me about the company's approach to handling data breaches or security incidents?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding security incident response procedures.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "security incident",
+   "data breach",
+   "incident response",
+   "cybersecurity",
+   "breach protocol"
+  ],
+  "intent_category": "Security",
+  "reasoning_notes": "Security incident response is a vault topic but not addressed in the available chunks.",
+  "test_case_id": "TC_237"
+ },
+ {
+  "question": "What's the company policy on how long we need to keep employee records and documents?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding data retention policy.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "data retention",
+   "record retention",
+   "document retention",
+   "retention period",
+   "archival"
+  ],
+  "intent_category": "Compliance",
+  "reasoning_notes": "Data retention policy is listed in the vault but no chunk covers this topic.",
+  "test_case_id": "TC_238"
+ },
+ {
+  "question": "How do I request time off if I'm expecting a new baby or need parental leave?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding parental leave policy.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "parental leave",
+   "maternity leave",
+   "paternity leave",
+   "newborn",
+   "family leave"
+  ],
+  "intent_category": "Leave Management",
+  "reasoning_notes": "Parental leave is a distinct leave type mentioned in vault topics but not covered in the provided chunks.",
+  "test_case_id": "TC_239"
+ },
+ {
+  "question": "What are the rules around password creation and management for company systems?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding password policy.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "password policy",
+   "password requirements",
+   "password management",
+   "authentication",
+   "password security"
+  ],
+  "intent_category": "Security",
+  "reasoning_notes": "Password policy is a vault topic but no corresponding chunk is provided.",
+  "test_case_id": "TC_240"
+ },
+ {
+  "question": "Can you explain the approval limits for different types of purchases and expenses?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding approval matrix or purchase approval limits.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "approval matrix",
+   "approval limits",
+   "spending approval",
+   "purchase authorization",
+   "approval thresholds"
+  ],
+  "intent_category": "Procurement",
+  "reasoning_notes": "Approval matrix is in the vault topics but not addressed in the available documentation chunks.",
+  "test_case_id": "TC_241"
+ },
+ {
+  "question": "What's the company's policy on conflicts of interest and how should I report them?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding conflict of interest policy.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "COI",
+   "disclosure",
+   "competing interests",
+   "ethical conflict"
+  ],
+  "intent_category": "Compliance",
+  "reasoning_notes": "Conflict of interest is a vault topic but not covered in the provided chunks.",
+  "test_case_id": "TC_242"
+ },
+ {
+  "question": "How should I handle a situation where I need to report unethical or illegal conduct at work?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding whistleblowing policy.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "whistleblowing",
+   "anonymous reporting",
+   "ethics hotline",
+   "misconduct reporting",
+   "protected disclosure"
+  ],
+  "intent_category": "Compliance",
+  "reasoning_notes": "Whistleblowing policy is listed in the vault but no chunk provides details on this topic.",
+  "test_case_id": "TC_243"
+ },
+ {
+  "question": "What's the process for requesting time off when I'm sick?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding sick leave procedures and policies.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "sick leave",
+   "illness",
+   "medical absence",
+   "time off sick"
+  ],
+  "intent_category": "Leave Management",
+  "reasoning_notes": "The vault contains annual and parental leave policies but no sick leave policy. This is a realistic HR question that would be unanswerable from the provided chunks.",
+  "test_case_id": "TC_244"
+ },
+ {
+  "question": "How do I get reimbursed for mileage when I drive for work?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding mileage reimbursement rates and procedures.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "mileage",
+   "reimbursement",
+   "driving",
+   "car allowance",
+   "travel expense"
+  ],
+  "intent_category": "Expense Management",
+  "reasoning_notes": "While device security and training budgets are covered, mileage reimbursement is not addressed in any of the provided chunks.",
+  "test_case_id": "TC_245"
+ },
+ {
+  "question": "What should I do if I discover a security breach or suspicious activity?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding security incident response procedures.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "security breach",
+   "incident response",
+   "suspicious activity",
+   "security threat",
+   "data breach"
+  ],
+  "intent_category": "Security",
+  "reasoning_notes": "Device security policy is covered but security incident response procedures are not included in the available documentation.",
+  "test_case_id": "TC_246"
+ },
+ {
+  "question": "Can I work from home and what are the guidelines for remote work arrangements?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding remote work policies and eligibility.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "remote work",
+   "work from home",
+   "WFH",
+   "flexible working",
+   "home office"
+  ],
+  "intent_category": "Work Arrangements",
+  "reasoning_notes": "The chunks cover IT onboarding and device security but do not address remote work policies or guidelines.",
+  "test_case_id": "TC_247"
+ },
+ {
+  "question": "What's the procedure for booking flights and hotels for my business trip?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding travel booking procedures and approved vendors.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "travel booking",
+   "flights",
+   "hotels",
+   "business travel",
+   "booking process"
+  ],
+  "intent_category": "Travel Management",
+  "reasoning_notes": "While training budgets and leave policies are documented, travel booking rules and hotel policies are not covered in the provided chunks.",
+  "test_case_id": "TC_248"
+ },
+ {
+  "question": "How should I handle a conflict of interest situation at work?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding conflict of interest disclosure and management procedures.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "conflict of interest",
+   "disclosure",
+   "ethical concerns",
+   "competing interests"
+  ],
+  "intent_category": "Compliance",
+  "reasoning_notes": "The documentation focuses on operational policies but does not include conflict of interest guidelines.",
+  "test_case_id": "TC_249"
+ },
+ {
+  "question": "What are the rules about giving gifts to clients and entertaining them?",
+  "question_type": "Negative/Unanswerable",
+  "difficulty": "Hard",
+  "expected_answer": "I am sorry, but the provided documentation does not contain information regarding client gifts, entertainment, and hospitality policies.",
+  "ground_truth_context_ids": [],
+  "retrieval_keywords": [
+   "client gifts",
+   "hospitality",
+   "entertaining clients",
+   "gift policy",
+   "business entertainment"
+  ],
+  "intent_category": "Business Conduct",
+  "reasoning_notes": "The provided chunks do not address client gift or hospitality policies.",
+  "test_case_id": "TC_250"
+ }
+]

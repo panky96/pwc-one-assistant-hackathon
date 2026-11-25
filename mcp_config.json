@@ -1,0 +1,177 @@
+{
+  "version": "1.0",
+  "environment": "production",
+  "defaults": {
+    "startup_timeout_ms": 10000,
+    "request_timeout_ms": 30000,
+    "max_retries": 2,
+    "retry_backoff_ms": 500
+  },
+  "mcpServers": {
+    "hybrid-rag": {
+      "enabled": true,
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "-m",
+        "mcp_servers.rag_mcp"
+      ],
+      "transport": "stdio",
+      "timeout_ms": 30000,
+      "retry": {
+        "enabled": true,
+        "max_attempts": 2,
+        "backoff_ms": 500
+      }
+    },
+    "state-store": {
+      "enabled": true,
+      "url": "${STATE_STORE_URL}",
+      "transport": "streamable-http",
+      "pool_size": 200,
+      "timeout_ms": 10000,
+      "retry": {
+        "enabled": true,
+        "max_attempts": 2,
+        "backoff_ms": 500
+      }
+    },
+    "graphify-vault": {
+      "enabled": true,
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "-m",
+        "mcp_servers.graphify_mcp"
+      ],
+      "transport": "stdio",
+      "timeout_ms": 30000
+    }
+  },
+  "plugins": [
+    {
+      "name": "pii_redactor",
+      "enabled": true,
+      "stage": "PRE_EXECUTION",
+      "priority": 10,
+      "fail_closed": true,
+      "config": {
+        "mode": "redact",
+        "log_matches": false
+      }
+    },
+    {
+      "name": "injection_shield",
+      "enabled": true,
+      "stage": "PRE_EXECUTION",
+      "priority": 20,
+      "fail_closed": true
+    },
+    {
+      "name": "circuit_breaker",
+      "enabled": true,
+      "stage": "TOOL_DISPATCH",
+      "priority": 10,
+      "config": {
+        "max_identical_calls": 2
+      }
+    },
+    {
+      "name": "ragas_auditor",
+      "enabled": true,
+      "stage": "POST_EXECUTION",
+      "priority": 10,
+      "config": {
+        "min_faithfulness": 0.92,
+        "execution_mode": "async",
+        "sample_rate": 0.1,
+        "on_failure": "flag"
+      }
+    }
+  ],
+  "retrieval": {
+    "strategy": "hybrid",
+    "timeout_ms": 150,
+    "stage_timeouts": {
+      "lexical_ms": 30,
+      "dense_ms": 50,
+      "fusion_ms": 10,
+      "rerank_ms": 60
+    },
+    "lexical": {
+      "candidate_k": 50
+    },
+    "dense": {
+      "candidate_k": 50,
+      "ef_search": 64
+    },
+    "fusion": {
+      "method": "rrf",
+      "rrf_k": 60,
+      "fused_k": 40
+    },
+    "reranker": {
+      "output_k": 4,
+      "min_score": 0.42
+    },
+    "generation": {
+      "max_context_chunks": 4
+    },
+    "cache": {
+      "enabled": true,
+      "strategy": "semantic",
+      "similarity_threshold": 0.98,
+      "require_entity_match": true,
+      "require_filter_match": true,
+      "require_dataset_match": true,
+      "cache_schema_version": 1,
+      "fallback_on_miss": true,
+      "ttl_seconds": 3600
+    }
+  },
+  "security": {
+    "authentication": {
+      "enabled": "${AUTH_ENABLED}"
+    },
+    "allow_unknown_servers": false,
+    "allow_unknown_plugins": false,
+    "redact_secrets_in_logs": true,
+    "validate_tool_inputs": true,
+    "validate_tool_outputs": true
+  },
+  "resilience": {
+    "circuit_breaker": {
+      "enabled": true,
+      "failure_threshold": 5,
+      "recovery_timeout_ms": 30000,
+      "half_open_max_calls": 1
+    },
+    "retry": {
+      "enabled": true,
+      "max_attempts": 2,
+      "initial_backoff_ms": 500,
+      "max_backoff_ms": 5000,
+      "jitter": true
+    }
+  },
+  "observability": {
+    "otel": {
+      "enabled": true,
+      "endpoint": "${OTEL_EXPORTER_OTLP_ENDPOINT}",
+      "service_name": "${SERVICE_NAME}",
+      "traces_enabled": true,
+      "metrics_enabled": true,
+      "logs_enabled": true,
+      "sampling_rate": 0.1
+    },
+    "logging": {
+      "level": "INFO",
+      "format": "json",
+      "include_trace_id": true,
+      "include_request_id": true,
+      "log_sensitive_data": false
+    }
+  }
+}
