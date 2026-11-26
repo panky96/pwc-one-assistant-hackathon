@@ -110,7 +110,7 @@ def measure() -> dict:
     telemetry.reset()
     for c in ans[:40]: ag.handle(c.question, ten)
     M[17] = (telemetry.counter("loop.steps") / telemetry.counter("loop.tasks"), "mean tool steps per completed RAG task")
-    M[18] = (None, "embedding model/window undefined in design (open item)")
+    M[18] = ((telemetry.counter("drift.sum") / telemetry.counter("drift.n")) if telemetry.counter("drift.n") else None, "mean goal-observation cosine over RAG turns (hash embedding stand-in)")
     # --- HITL (19) ---
     clock = [0.0]; ops = OperationStore(approval_ttl_s=5, clock=lambda: clock[0]); bad = 0; total = 0
     ran = []

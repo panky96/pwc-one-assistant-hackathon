@@ -1,16 +1,20 @@
-"""Agent turn orchestration: PRE plugins -> triage -> route -> (cache, retrieval loop, generation, verification, fallback)."""
+"""Agent turn orchestration: PRE plugins -> triage -> route -> (retrieval loop, generation, verification, fallback).
+Bulkheads guard the RAG and LLM pools; subagents limit which tool tiers each stage may call."""
 from __future__ import annotations
-import contextvars, re, uuid
+import contextlib, contextvars, re, uuid
 from app import telemetry
+from app.cache import cache_identity
+from app.context import ReactContext
 from app.contracts import ChatResponse, Citation, HybridRetrieveInput, Route, TenantContext, Tier
+from app.harness import Tool
 from app.llm import LLMError, build_messages, goal_anchor
 from app.loop import BoundedLoop, Final, ToolCall, TurnState
 from app.plugins_core import Blocked, PluginRegistry, Stage
+from app.subagents import EXECUTION, RETRIEVAL
 from app.tools import extract_args, select_tool
 from app.transactions import OperationStore
-from app.triage import apply_confidence_policy, triage
+from app.triage import MIN_CONFIDENCE, apply_confidence_policy, triage
 from app.verification import verify
-from app.harness import Tool
 from app.vault import Graph, ntokens, pruned_context
 from mcp_servers.rag_server import HybridRetriever, tokenize
 from plugins.safety import scan_injection
@@ -22,15 +26,25 @@ ABSTAIN = "I don't have sufficient evidence in the knowledge base to answer that
 
 class Agent:
     def __init__(self, registry: PluginRegistry, retriever: HybridRetriever, ops: OperationStore, harness, llm=None,
-                 store=None, cache=None, graph: Graph | None = None, models=("small", "large")):
+                 store=None, cache=None, graph: Graph | None = None, models=("small", "large"), pools=None, rc=None):
         self.registry, self.retriever, self.ops, self.h = registry, retriever, ops, harness
         self.llm, self.store, self.cache, self.graph, self.models = llm, store, cache, graph, models
+        self.pools = pools or {}
+        self.min_conf = rc.min_confidence if rc else MIN_CONFIDENCE
+        self.loop_kw = rc.loop_kwargs() if rc else {}
         self.h.register(Tool("hybrid_retrieve", Tier.READ, HybridRetrieveInput,
                              lambda **kw: self.retriever.retrieve(kw["query"], _tenant_var.get(), kw["candidate_k"], kw["output_k"])))
         self.last_token_stats: tuple[int, int] | None = None
+        self.last_trace: list = []
+        self.last_obs: list = []
+
+    def _pool(self, name: str):
+        b = self.pools.get(name)
+        return b() if b else contextlib.nullcontext()
 
     def _audit(self, t, event, payload=""):
-        if self.store: self.store.audit(t.tenant_id, event, payload)
+        if self.store:
+            self.store.audit(t.tenant_id, event, payload)
 
     def handle(self, message: str, tenant: TenantContext, session_id: str | None = None, operation_id: str | None = None) -> ChatResponse:
         telemetry.incr("requests")
@@ -38,14 +52,18 @@ class Agent:
             with telemetry.span("hook.pre"):
                 ctx = self.registry.run(Stage.PRE, {"message": message, "tenant": tenant})
         except Blocked as b:
-            telemetry.incr("blocked"); self._audit(tenant, f"blocked:{b.plugin}", message)
+            telemetry.incr("blocked")
+            self._audit(tenant, f"blocked:{b.plugin}", message)
             return ChatResponse(route=Route.REJECT_OOS, answer=f"Request blocked ({b.plugin}).", abstained=True)
         msg = ctx["message"]
         with telemetry.span("triage"):
-            t = apply_confidence_policy(triage(msg))
+            t = ctx.get("triage") or apply_confidence_policy(triage(msg), self.min_conf)
         self._audit(tenant, f"route:{t.route.value}", msg)
         if t.clarify:
             return ChatResponse(route=t.route, answer="Could you clarify what you want to do?", clarification=["intent", "target entity"])
+        if t.route == Route.TRANSACTION_EXEC and ctx.get("clarification"):
+            return ChatResponse(route=t.route, answer="I need more details before I can prepare this action.",
+                                clarification=ctx["clarification"])
         if t.route == Route.REJECT_OOS:
             return ChatResponse(route=t.route, answer="That is outside what I can help with.", abstained=True)
         if t.route == Route.DIRECT_ANSWER:
@@ -54,7 +72,7 @@ class Agent:
             return self._transaction(msg, tenant, operation_id, session_id)
         return self._rag(msg, tenant, session_id)
 
-    # ---- TRANSACTION_EXEC ----
+    # ---- TRANSACTION_EXEC (execution subagent) ----
     def _transaction(self, msg, tenant, operation_id, session_id) -> ChatResponse:
         try:
             self.registry.run(Stage.DISPATCH, {"operation_id": operation_id})
@@ -66,7 +84,7 @@ class Agent:
         args, missing = extract_args(tool, msg, self.h)
         if missing:  # ambiguity: never guess, never call downstream
             return ChatResponse(route=Route.TRANSACTION_EXEC, answer="I need more details before I can prepare this action.", clarification=missing)
-        loop = BoundedLoop(self.h, tenant)
+        loop = BoundedLoop(self.h, tenant, subagent=EXECUTION, **self.loop_kw)
         res = loop.run(lambda obs: ToolCall(tool, args))
         if res.state != TurnState.AWAITING_APPROVAL:
             return ChatResponse(route=Route.TRANSACTION_EXEC, answer=f"Could not prepare the action ({res.state.value}).", abstained=True)
@@ -76,22 +94,31 @@ class Agent:
             for k, v in res.pending.args.items():
                 self.store.put_fact(tenant.tenant_id, session_id, k, str(v), verified=True)  # regex-validated user input
         note = f" (auto-repaired: {res.repairs})" if res.repairs else ""
-        return ChatResponse(route=Route.TRANSACTION_EXEC, answer=f"Pending human approval; nothing has been executed{note}.", operation_id=op.operation_id)
+        return ChatResponse(route=Route.TRANSACTION_EXEC, answer=f"Pending human approval; nothing has been executed{note}.",
+                            operation_id=op.operation_id)
 
-    # ---- HYBRID_RAG ----
+    # ---- HYBRID_RAG (retrieval subagent) ----
     def _rag(self, msg, tenant, session_id) -> ChatResponse:
         entities = sorted(set(_ID.findall(msg)))
         ident = None
         if self.cache:
-            from app.cache import cache_identity
             ident = cache_identity(tenant.tenant_id, "v1", "policy_qa", entities, [], ",".join(sorted(tenant.roles)))
             hit = self.cache.get(tenant.tenant_id, ident, msg)
-            if hit: telemetry.incr("cache.hit"); return ChatResponse(**hit)
+            if hit:
+                telemetry.incr("cache.hit")
+                return ChatResponse(**hit)
         _tenant_var.set(tenant.tenant_id)
-        loop = BoundedLoop(self.h, tenant)
-        with telemetry.span("retrieval"):
+        ctx = ReactContext(goal_anchor(msg, entities))
+        loop = BoundedLoop(self.h, tenant, subagent=RETRIEVAL, context=ctx, **self.loop_kw)
+        with telemetry.span("retrieval"), self._pool("rag_pool"):
             res = loop.run(lambda obs: ToolCall("hybrid_retrieve", {"query": msg}) if not obs else Final("ok"))
-        telemetry.incr("loop.steps", res.steps); telemetry.incr("loop.tasks")
+        self.last_trace, self.last_obs = res.trace, res.observations
+        telemetry.incr("loop.steps", res.steps)
+        telemetry.incr("loop.tasks")
+        d = ctx.drift(msg)
+        if d is not None:
+            telemetry.incr("drift.sum", d)
+            telemetry.incr("drift.n")
         if res.state != TurnState.DONE or not res.raw:
             return ChatResponse(route=Route.HYBRID_RAG, answer=ABSTAIN, abstained=True)
         r = res.raw[0]
@@ -110,7 +137,8 @@ class Agent:
         if answer is None:
             return ChatResponse(route=Route.HYBRID_RAG, answer=ABSTAIN, abstained=True)
         out = ChatResponse(route=Route.HYBRID_RAG, answer=answer, citations=[Citation(chunk_id=c.id, score=s) for c, s in safe])
-        if self.cache and ident: self.cache.put(tenant.tenant_id, ident, msg, out.model_dump(mode="json"))
+        if self.cache and ident:
+            self.cache.put(tenant.tenant_id, ident, msg, out.model_dump(mode="json"))
         return out
 
     def _generate(self, msg, tenant, context, entities) -> str | None:
@@ -124,10 +152,11 @@ class Agent:
         pctx: dict = {"escalations": 0}
         for model in (self.models[0], self.models[1]):
             try:
-                with telemetry.span("llm.generate", model=model):
+                with telemetry.span("llm.generate", model=model), self._pool("llm_pool"):
                     gen = self.llm.complete(build_messages(anchor, context, msg), model).text
             except LLMError:
-                telemetry.incr("llm.errors"); return None
+                telemetry.incr("llm.errors")
+                return None
             if gen.strip().upper().startswith("INSUFFICIENT"):
                 return None
             with telemetry.span("verify"):
@@ -138,6 +167,7 @@ class Agent:
                 return gen
             if not pctx.get("escalate"):
                 break
-            pctx["escalations"] += 1; telemetry.incr("model.escalations")
+            pctx["escalations"] += 1
+            telemetry.incr("model.escalations")
         telemetry.incr("verification.vetoed")
         return None

@@ -34,8 +34,8 @@ def triage(msg: str) -> TriageResult:
     return TriageResult(Route.HYBRID_RAG, 0.5)
 
 
-def apply_confidence_policy(r: TriageResult) -> TriageResult:
-    if r.confidence >= MIN_CONFIDENCE:
+def apply_confidence_policy(r: TriageResult, min_confidence: float = MIN_CONFIDENCE) -> TriageResult:
+    if r.confidence >= min_confidence:
         return r
     if r.route == Route.TRANSACTION_EXEC:
         return TriageResult(Route.DIRECT_ANSWER, r.confidence, clarify=True, risk_tier=r.risk_tier)

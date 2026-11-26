@@ -48,9 +48,28 @@
       ],
       "transport": "stdio",
       "timeout_ms": 30000
+    },
+    "k6": {
+      "enabled": true,
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "-m",
+        "mcp_servers.k6_mcp"
+      ],
+      "transport": "stdio",
+      "timeout_ms": 900000
     }
   },
   "plugins": [
+    {
+      "name": "authn_gate",
+      "enabled": true,
+      "stage": "PRE_EXECUTION",
+      "priority": 5,
+      "fail_closed": true
+    },
     {
       "name": "pii_redactor",
       "enabled": true,
@@ -70,24 +89,50 @@
       "fail_closed": true
     },
     {
+      "name": "ambiguity_gate",
+      "enabled": true,
+      "stage": "PRE_EXECUTION",
+      "priority": 30,
+      "fail_closed": true
+    },
+    {
       "name": "circuit_breaker",
       "enabled": true,
       "stage": "TOOL_DISPATCH",
       "priority": 10,
+      "fail_closed": true,
       "config": {
         "max_identical_calls": 2
       }
+    },
+    {
+      "name": "idempotency_guard",
+      "enabled": true,
+      "stage": "TOOL_DISPATCH",
+      "priority": 20,
+      "fail_closed": true
     },
     {
       "name": "ragas_auditor",
       "enabled": true,
       "stage": "POST_EXECUTION",
       "priority": 10,
+      "fail_closed": false,
       "config": {
         "min_faithfulness": 0.92,
         "execution_mode": "async",
         "sample_rate": 0.1,
         "on_failure": "flag"
+      }
+    },
+    {
+      "name": "model_fallback",
+      "enabled": true,
+      "stage": "POST_EXECUTION",
+      "priority": 20,
+      "fail_closed": false,
+      "config": {
+        "max_escalations": 1
       }
     }
   ],
@@ -173,5 +218,30 @@
       "include_request_id": true,
       "log_sensitive_data": false
     }
+  },
+  "harness": {
+    "max_iterations": 5,
+    "total_turn_budget_ms": 2500,
+    "timeouts": {
+      "state_ms": 100,
+      "retrieval_ms": 150,
+      "rerank_ms": 100,
+      "tool_read_ms": 500,
+      "tool_compute_ms": 1000,
+      "model_ms": 1500
+    },
+    "approval_excluded_from_turn_budget": true
+  },
+  "triage": {
+    "min_confidence": 0.9,
+    "temperature": 0.0,
+    "low_confidence_action": "clarify_or_read_only_rag"
+  },
+  "bulkheads": {
+    "rag_pool": 64,
+    "db_pool": 128,
+    "llm_pool": 256,
+    "control_pool": 32,
+    "acquire_timeout_ms": 50
   }
 }

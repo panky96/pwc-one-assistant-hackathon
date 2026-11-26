@@ -1,12 +1,14 @@
 """Span recorder (OTel-compatible shape). Bridges to OpenTelemetry when the SDK and an endpoint are configured."""
 from __future__ import annotations
-import contextlib, statistics, threading, time
+import collections, contextlib, statistics, threading, time
 from collections import defaultdict
 
 _lock = threading.Lock()
 _durations: dict[str, list[float]] = defaultdict(list)
 _counters: dict[str, float] = defaultdict(float)
 _otel_tracer = None
+_events: collections.deque = collections.deque(maxlen=500)
+_T0 = time.perf_counter()
 
 
 def init_otel(endpoint: str | None, service_name: str) -> bool:
@@ -36,8 +38,16 @@ def span(name: str, **attrs):
         with cm:
             yield
     finally:
+        dur = (time.perf_counter() - t0) * 1000
         with _lock:
-            _durations[name].append((time.perf_counter() - t0) * 1000)
+            _durations[name].append(dur)
+            _events.append({"name": name, "start_ms": (t0 - _T0) * 1000, "end_ms": (t0 - _T0) * 1000 + dur,
+                            "dur_ms": dur, "attrs": {k: str(v) for k, v in attrs.items()}})
+
+
+def events(n: int = 300) -> list[dict]:
+    with _lock:
+        return list(_events)[-n:]
 
 
 def incr(name: str, v: float = 1.0) -> None:
@@ -67,7 +77,7 @@ def count(name: str) -> int:
 
 def reset() -> None:
     with _lock:
-        _durations.clear(); _counters.clear()
+        _durations.clear(); _counters.clear(); _events.clear()
 
 
 def snapshot() -> dict:

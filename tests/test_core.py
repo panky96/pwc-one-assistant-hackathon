@@ -83,14 +83,14 @@ def test_operation_state_machine():
     t = [0.0]
     s = OperationStore(approval_ttl_s=10, clock=lambda: t[0])
     op = s.propose("T", "o1", "alice", "w", {"x": 1})
-    assert s.propose("T", "o1", "alice", "w", {"x": 1}) is op
+    assert s.propose("T", "o1", "alice", "w", {"x": 1}).operation_id == "o1"
     with pytest.raises(TxnError):
         s.execute("T", "o1", lambda **k: 1)  # not approved
     s.decide("T", "o1", "bob", True)
     calls = []
     s.execute("T", "o1", lambda **k: calls.append(1) or "ok")
     s.execute("T", "o1", lambda **k: calls.append(1) or "ok")
-    assert calls == [1] and op.state == OpState.EXECUTED
+    assert calls == [1] and s.get("T", "o1").state == OpState.EXECUTED
     with pytest.raises(TxnError):
         s.get("OTHER", "o1")  # cross-tenant
     s.propose("T", "o2", "alice", "w", {})
