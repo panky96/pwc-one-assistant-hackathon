@@ -1,6 +1,6 @@
 """OpenRouter (OpenAI-compatible) client with retry/backoff, token usage and streaming TTFT measurement."""
 from __future__ import annotations
-import json, time
+import json, os, time
 from dataclasses import dataclass, field
 import httpx
 from app import telemetry
@@ -35,7 +35,7 @@ class OpenRouterClient:
         if stream: b["stream"] = True
         return b
 
-    def complete(self, messages: list[dict], model: str, max_tokens: int = 400, temperature: float = 0.0) -> LLMResult:
+    def complete(self, messages: list[dict], model: str, max_tokens: int = int(os.getenv("LLM_MAX_TOKENS", "400")), temperature: float = 0.0) -> LLMResult:
         last: Exception | None = None
         for attempt in range(self.max_retries + 1):
             t0 = time.perf_counter()

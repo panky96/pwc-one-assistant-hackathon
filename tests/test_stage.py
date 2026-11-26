@@ -83,7 +83,8 @@ def test_cache_serves_second_request():
     c = TestClient(app)
     q = {"message": "How much can I claim for meals per day?"}
     a, b = c.post("/v1/chat", json=q).json(), c.post("/v1/chat", json=q).json()
-    assert a == b and app.state.agent.cache.hits == 1
+    strip = lambda r: {k: v for k, v in r.items() if k != "request_id"}  # each request gets its own id
+    assert strip(a) == strip(b) and a["request_id"] != b["request_id"] and app.state.agent.cache.hits == 1
 
 
 def test_audit_chain_tamper_detected():

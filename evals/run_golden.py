@@ -63,11 +63,23 @@ def classify(case, resp, rr, ranked, notes) -> str | None:
     return "CONTEXT_BUILDING"
 
 
-def evaluate(use_llm: bool = False, limit: int | None = None, workers: int = 6) -> dict:
-    cases = load_golden()[:limit]
+QUOTAS = {"Factoid": 8, "Complex/Reasoning": 8, "Multi-Hop": 6, "Summary": 4, "Negative/Unanswerable": 4}
+
+
+def stratified(cases):
+    """Deterministic 30-case sample that keeps the question-type mix (calibration on a token budget)."""
+    return [c for t, q in QUOTAS.items() for c in [x for x in cases if x.question_type == t][:q]]
+
+
+def evaluate(use_llm: bool = False, limit: int | None = None, workers: int = 6, subset: bool = False,
+             small_only: bool = False) -> dict:
+    cases = stratified(load_golden()) if subset else load_golden()[:limit]
     notes = load_vault()
     texts = {n.id: n.title + ". " + " ".join(n.facts) for n in notes.values()}
     s = Settings.from_env(dict(os.environ) if use_llm else {})
+    if small_only:  # no large-model escalation during calibration
+        import dataclasses
+        s = dataclasses.replace(s, model_large=s.model_small)
     app = create_app(s, llm="auto" if use_llm else None, use_vault=True, graphify=False)
     agent = app.state.agent
     telemetry.reset()
@@ -136,7 +148,7 @@ def evaluate(use_llm: bool = False, limit: int | None = None, workers: int = 6) 
     out["failure_stages"] = dict(stages)
     out["spans"] = telemetry.snapshot()["spans"]
     RESULTS.mkdir(exist_ok=True)
-    tag = "llm" if use_llm else "extractive"
+    tag = ("llm" if use_llm else "extractive") + ("_subset" if subset else "")
     (RESULTS / f"golden_{tag}.json").write_text(json.dumps(out, indent=2))
     (RESULTS / "diagnostics.jsonl").write_text("\n".join(json.dumps(d) for d in diag) + ("\n" if diag else ""))
     return out
@@ -145,7 +157,7 @@ def evaluate(use_llm: bool = False, limit: int | None = None, workers: int = 6) 
 if __name__ == "__main__":
     from dotenv import load_dotenv
     load_dotenv(".env")
-    o = evaluate(use_llm="--llm" in sys.argv)
+    o = evaluate(use_llm="--llm" in sys.argv, subset="--subset" in sys.argv, small_only="--small-only" in sys.argv)
     print(json.dumps({k: (round(v, 4) if isinstance(v, float) else v) for k, v in o.items() if k not in ("spans", "gates")}, indent=1))
     for k, g in o["gates"].items():
         print(f"{k:24s} {g['value']:.3f} (gate {g['gate']}) {'PASS' if g['pass'] else 'FAIL'}")
