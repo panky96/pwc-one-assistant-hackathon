@@ -3,6 +3,7 @@ id: onboarding-hr
 domain: hr
 risk_tier: low
 version: 1
+status: APPROVED
 title: New Joiner HR Onboarding
 ---
 # New Joiner HR Onboarding

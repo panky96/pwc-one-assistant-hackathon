@@ -3,6 +3,7 @@ id: cloud-spend
 domain: it
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Cloud Spend Governance
 ---
 # Cloud Spend Governance

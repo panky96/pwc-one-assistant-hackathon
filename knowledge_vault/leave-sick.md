@@ -3,6 +3,7 @@ id: leave-sick
 domain: hr
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Sick Leave Policy
 ---
 # Sick Leave Policy

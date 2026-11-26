@@ -3,6 +3,7 @@ id: leave-annual
 domain: hr
 risk_tier: low
 version: 1
+status: APPROVED
 title: Annual Leave Policy
 ---
 # Annual Leave Policy

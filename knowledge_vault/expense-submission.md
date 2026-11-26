@@ -3,6 +3,7 @@ id: expense-submission
 domain: finance
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Expense Report Submission
 ---
 # Expense Report Submission

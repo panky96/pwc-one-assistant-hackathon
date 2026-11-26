@@ -3,6 +3,7 @@ id: performance-review
 domain: hr
 risk_tier: low
 version: 1
+status: APPROVED
 title: Performance Review Cycle
 ---
 # Performance Review Cycle

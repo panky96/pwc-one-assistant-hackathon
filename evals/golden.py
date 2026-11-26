@@ -10,6 +10,9 @@ TYPES = {"Factoid": ("Easy", 63), "Complex/Reasoning": ("Medium", 62), "Multi-Ho
 OUT = Path(__file__).resolve().parent.parent / "tests" / "golden" / "golden_250.json"
 
 
+REVIEW_STATES = {"GENERATED", "HUMAN_REVIEWED", "DOMAIN_REVIEWED", "CLINICALLY_REVIEWED"}
+
+
 class GoldenCase(BaseModel):
     test_case_id: str
     question: str = Field(min_length=8)
@@ -20,6 +23,17 @@ class GoldenCase(BaseModel):
     retrieval_keywords: list[str] = Field(min_length=1)
     intent_category: str
     reasoning_notes: str
+    review_status: str = "GENERATED"  # optional metadata; existing cases default to GENERATED
+    reviewed_by: str | None = None
+    reviewed_at: str | None = None
+    dataset_version: str = "v1"
+
+    @field_validator("review_status")
+    @classmethod
+    def _review(cls, v):
+        if v not in REVIEW_STATES:
+            raise ValueError(f"bad review_status {v}")
+        return v
 
     @field_validator("question_type")
     @classmethod
@@ -34,6 +48,8 @@ def validate(cases: list[dict], notes: dict) -> list[GoldenCase]:
         g = GoldenCase(**c)
         if g.test_case_id in seen: raise ValueError(f"dup id {g.test_case_id}")
         seen.add(g.test_case_id)
+        if g.review_status != "GENERATED" and not g.reviewed_by:
+            raise ValueError(f"{g.test_case_id}: reviewed status needs reviewed_by")
         if any(i not in notes for i in g.ground_truth_context_ids): raise ValueError(f"{g.test_case_id}: unknown context id")
         if g.question_type == "Negative/Unanswerable" and g.ground_truth_context_ids: raise ValueError(f"{g.test_case_id}: negative with context")
         if g.question_type == "Multi-Hop" and len(set(g.ground_truth_context_ids)) < 2: raise ValueError(f"{g.test_case_id}: multi-hop needs >=2 chunks")

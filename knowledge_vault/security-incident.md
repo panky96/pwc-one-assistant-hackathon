@@ -3,6 +3,7 @@ id: security-incident
 domain: security
 risk_tier: high
 version: 1
+status: APPROVED
 title: Security Incident Response
 ---
 # Security Incident Response

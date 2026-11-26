@@ -3,6 +3,7 @@ id: incident-oncall
 domain: it
 risk_tier: medium
 version: 1
+status: APPROVED
 title: On-call Rotation
 ---
 # On-call Rotation

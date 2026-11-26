@@ -1,5 +1,5 @@
 from __future__ import annotations
-import os
+import asyncio, contextlib, logging, os
 from pathlib import Path
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Request
@@ -21,24 +21,41 @@ from mcp_servers.rag_server import HybridRetriever
 from plugins.registry import build_registry
 
 ROOT = Path(__file__).resolve().parent.parent
+log = logging.getLogger("pwc.app")
 
 
 def _retriever(chunks, rc):
     kw = dict(rrf_k=rc.rrf_k, fused_k=rc.fused_k, min_score=rc.min_score)
-    if os.getenv("RETRIEVAL_BACKEND") == "onnx":  # design models; needs fastembed model downloads
+    backend = os.getenv("RETRIEVAL_BACKEND", rc.retrieval_backend)
+    if backend == "onnx":  # pinned design models (BGE encoder + bge-reranker-v2-m3) via fastembed/ONNX
         from mcp_servers.onnx_models import OnnxEncoder, OnnxReranker
         return HybridRetriever(chunks, encoder=OnnxEncoder(), reranker=OnnxReranker(), **kw)
     return HybridRetriever(chunks, **kw)
+
+
+async def _reconcile_forever(ops: OperationStore, interval_s: float):
+    """Scheduled reconciliation: recovers stale EXECUTING operations to NEEDS_REVIEW. Safe to run in every worker
+    because each transition is a conditional update."""
+    while True:
+        await asyncio.sleep(interval_s)
+        try:
+            flagged = await asyncio.to_thread(ops.reconcile)
+            if flagged:
+                telemetry.incr("ops.needs_review", len(flagged))
+                log.warning("operations need manual review: %s", flagged)
+        except Exception:
+            telemetry.incr("reconcile.errors")
+            log.exception("reconciliation failed")
 
 
 def create_app(settings: Settings | None = None, verifier=None, chunks=None, llm="auto", store: Store | None = None,
                use_vault: bool = False, graphify: bool = False, cache: bool = False, mcp_config=None) -> FastAPI:
     if settings is None:
         load_dotenv()
-        settings = Settings.from_env()  # raises -> startup failure
+        settings = Settings.from_env()  # raises -> startup failure (incl. production DB guard)
     rc = RuntimeConfig.load(mcp_config or os.getenv("MCP_CONFIG") or ROOT / "mcp_config.json", settings)
     telemetry.init_otel(settings.otlp_endpoint, settings.service_name)
-    notes = load_vault() if (use_vault or graphify) else {}
+    notes = load_vault() if (use_vault or graphify) else {}  # approved knowledge only
     allc = list(chunks or []) + (vault_chunks(notes, "*") if use_vault else [])
     if llm == "auto":
         llm = OpenRouterClient(settings.openrouter_api_key, settings.openrouter_base_url) if settings.openrouter_api_key else None
@@ -52,8 +69,20 @@ def create_app(settings: Settings | None = None, verifier=None, chunks=None, llm
         sc = SemanticCache(backend, threshold=rc.cache_threshold, ttl=rc.cache_ttl)
     pools = {name: Bulkhead(name, size, rc.bulkhead_wait_s) for name, size in rc.bulkheads.items()}
     agent = Agent(registry, _retriever(allc, rc), ops, harness, llm=llm, store=store, cache=sc,
-                  graph=Graph(notes) if graphify else None, models=(settings.model_small, settings.model_large), pools=pools, rc=rc)
-    app = FastAPI(title=settings.service_name)
+                  graph=Graph(notes) if graphify else None, models=(settings.model_small, settings.model_large),
+                  pools=pools, rc=rc, versions=rc.governance)
+
+    @contextlib.asynccontextmanager
+    async def lifespan(_app):
+        task = (asyncio.create_task(_reconcile_forever(ops, rc.reconcile_interval_s))
+                if rc.reconcile_interval_s > 0 else None)
+        try:
+            yield
+        finally:
+            if task:
+                task.cancel()
+
+    app = FastAPI(title=settings.service_name, lifespan=lifespan)
     app.state.agent, app.state.ops, app.state.store = agent, ops, store
 
     @app.exception_handler(Overloaded)

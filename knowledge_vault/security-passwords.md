@@ -3,6 +3,7 @@ id: security-passwords
 domain: security
 risk_tier: high
 version: 1
+status: APPROVED
 title: Password Policy
 ---
 # Password Policy

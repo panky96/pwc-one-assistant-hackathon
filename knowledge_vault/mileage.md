@@ -3,6 +3,7 @@ id: mileage
 domain: finance
 risk_tier: low
 version: 1
+status: APPROVED
 title: Mileage Reimbursement
 ---
 # Mileage Reimbursement

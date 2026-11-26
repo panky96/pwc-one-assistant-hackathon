@@ -3,6 +3,7 @@ id: data-privacy
 domain: compliance
 risk_tier: high
 version: 1
+status: APPROVED
 title: Data Privacy Handling
 ---
 # Data Privacy Handling

@@ -23,7 +23,7 @@ def idempotency_guard(ctx):
 def make_ragas_auditor(sample_rate=0.1, min_faithfulness=0.92, rng=random.random):
     def ragas_auditor(ctx):  # async/sampled monitor: flags, never blocks
         if ctx.get("chunks") and rng() < sample_rate:
-            v = verify(ctx["answer"], ctx["chunks"])
+            v = verify(ctx["answer"], ctx["chunks"], chunk_ids=ctx.get("chunk_ids"))
             telemetry.incr("ragas.sampled"); telemetry.incr("ragas.faithfulness_sum", v.support)
             if v.support < min_faithfulness:
                 telemetry.incr("ragas.flagged"); ctx["flagged"] = True

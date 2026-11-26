@@ -3,6 +3,7 @@ id: whistleblowing
 domain: compliance
 risk_tier: high
 version: 1
+status: APPROVED
 title: Whistleblowing Policy
 ---
 # Whistleblowing Policy

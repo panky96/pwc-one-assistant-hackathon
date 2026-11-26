@@ -3,6 +3,7 @@ id: workplace-safety
 domain: hr
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Workplace Safety
 ---
 # Workplace Safety

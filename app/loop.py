@@ -68,14 +68,14 @@ class BoundedLoop:
         start = self.clock()
         res.trace += [TurnState.INIT, TurnState.TRIAGE]
         for step in range(1, self.max_it + 1):
-            if self.clock() - start > self.budget:  # overall turn deadline always binds
-                res.state = TurnState.HALTED
-                return res
             res.trace.append(TurnState.REASONING)
             action = decide(res.observations)
-            if isinstance(action, Final):
+            if isinstance(action, Final):  # finalizing already-gathered evidence is never cut off by the budget
                 res.trace += [TurnState.VERIFY, TurnState.DONE]
                 res.state, res.final, res.steps = TurnState.DONE, action.text, step - 1
+                return res
+            if self.clock() - start > self.budget:  # the turn deadline blocks NEW tool calls
+                res.state = TurnState.HALTED
                 return res
             res.trace.append(TurnState.TOOL_CALL)
             res.steps = step

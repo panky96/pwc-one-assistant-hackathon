@@ -3,6 +3,7 @@ id: training-budget
 domain: hr
 risk_tier: low
 version: 1
+status: APPROVED
 title: Training Budget
 ---
 # Training Budget

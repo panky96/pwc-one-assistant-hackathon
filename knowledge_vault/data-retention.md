@@ -3,6 +3,7 @@ id: data-retention
 domain: compliance
 risk_tier: high
 version: 1
+status: APPROVED
 title: Data Retention Policy
 ---
 # Data Retention Policy

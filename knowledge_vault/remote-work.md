@@ -3,6 +3,7 @@ id: remote-work
 domain: hr
 risk_tier: low
 version: 1
+status: APPROVED
 title: Remote Work Policy
 ---
 # Remote Work Policy

@@ -3,6 +3,7 @@ id: vendor-onboarding
 domain: procurement
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Vendor Onboarding
 ---
 # Vendor Onboarding

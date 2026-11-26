@@ -3,6 +3,7 @@ id: leave-parental
 domain: hr
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Parental Leave Policy
 ---
 # Parental Leave Policy

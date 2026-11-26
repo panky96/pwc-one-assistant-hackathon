@@ -13,6 +13,7 @@ _LINK = re.compile(r"\[\[([^\]]+)\]\]")
 @dataclass
 class Note:
     id: str; domain: str; risk_tier: str; version: str; title: str; body: str; links: list[str]; facts: list[str]
+    status: str = "DRAFT"  # only APPROVED notes are retrievable
 
 
 def parse_note(path: Path) -> Note:
@@ -25,11 +26,13 @@ def parse_note(path: Path) -> Note:
             raise ValueError(f"{path}: frontmatter missing {req}")
     body = m[2]
     return Note(meta["id"], meta["domain"], meta["risk_tier"], meta["version"], meta.get("title", meta["id"]), body,
-                _LINK.findall(body), [l[2:].strip() for l in body.splitlines() if l.startswith("- ")])
+                _LINK.findall(body), [l[2:].strip() for l in body.splitlines() if l.startswith("- ")],
+                status=meta.get("status", "DRAFT"))
 
 
-def load_vault(path: str | Path = "knowledge_vault") -> dict[str, Note]:
-    return {n.id: n for n in (parse_note(p) for p in sorted(Path(path).glob("*.md")))}
+def load_vault(path: str | Path = "knowledge_vault", approved_only: bool = True) -> dict[str, Note]:
+    notes = {n.id: n for n in (parse_note(p) for p in sorted(Path(path).glob("*.md")))}
+    return {i: n for i, n in notes.items() if n.status == "APPROVED"} if approved_only else notes
 
 
 def vault_chunks(notes: dict[str, Note], tenant_id: str) -> list[Chunk]:

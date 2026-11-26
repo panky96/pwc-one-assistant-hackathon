@@ -53,3 +53,8 @@ class ChatResponse(BaseModel):
     clarification: list[str] = []
     abstained: bool = False
     operation_id: str | None = None
+    request_id: str | None = None
+    response_mode: str | None = None  # llm | extractive | vetoed | escalated | abstained_retrieval | ...
+    degraded: bool = False
+    degraded_reason: str | None = None
+    risk: str = "NORMAL"

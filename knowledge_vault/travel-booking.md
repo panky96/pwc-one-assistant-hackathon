@@ -3,6 +3,7 @@ id: travel-booking
 domain: travel
 risk_tier: low
 version: 1
+status: APPROVED
 title: Travel Booking Rules
 ---
 # Travel Booking Rules

@@ -41,6 +41,9 @@ class Settings:
         auth = parse_strict_bool("AUTH_ENABLED", e.get("AUTH_ENABLED", "false"))
         if app_env == "production" and not auth:
             raise ConfigError("production requires AUTH_ENABLED=true; refusing to start")
+        db = e.get("DATABASE_URL", "")
+        if app_env == "production" and not db.startswith(("postgresql://", "postgres://")):
+            raise ConfigError("production requires DATABASE_URL=postgresql://...; SQLite is for development only")
         return cls(
             app_env=app_env,
             auth_enabled=auth,

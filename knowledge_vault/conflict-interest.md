@@ -3,6 +3,7 @@ id: conflict-interest
 domain: compliance
 risk_tier: high
 version: 1
+status: APPROVED
 title: Conflict of Interest
 ---
 # Conflict of Interest

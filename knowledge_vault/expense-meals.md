@@ -3,6 +3,7 @@ id: expense-meals
 domain: finance
 risk_tier: low
 version: 1
+status: APPROVED
 title: Meal Expense Policy
 ---
 # Meal Expense Policy

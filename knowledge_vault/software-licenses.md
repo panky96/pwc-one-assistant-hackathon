@@ -3,6 +3,7 @@ id: software-licenses
 domain: it
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Software License Policy
 ---
 # Software License Policy

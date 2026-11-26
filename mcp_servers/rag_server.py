@@ -109,6 +109,8 @@ class RetrievalResult:
     abstain: bool
     top_score: float
     candidates: tuple = ()  # fused candidate ids (for Recall@50)
+    lexical: tuple = ()  # BM25 ranking ids (diagnostics)
+    dense: tuple = ()  # dense ranking ids (diagnostics)
 
 
 class HybridRetriever:
@@ -141,5 +143,5 @@ class HybridRetriever:
         cands = tuple(cid for cid, _ in rrf([lex_rank, den_rank], self.rrf_k)[:candidate_k])
         top = scored[0][1] if scored else 0.0
         if top < self.min_score:  # only reranker score space is compared to min_score
-            return RetrievalResult([], True, top, cands)
-        return RetrievalResult(scored, False, top, cands)
+            return RetrievalResult([], True, top, cands, tuple(lex_rank), tuple(den_rank))
+        return RetrievalResult(scored, False, top, cands, tuple(lex_rank), tuple(den_rank))

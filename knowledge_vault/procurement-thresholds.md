@@ -3,6 +3,7 @@ id: procurement-thresholds
 domain: procurement
 risk_tier: medium
 version: 1
+status: APPROVED
 title: Procurement Thresholds
 ---
 # Procurement Thresholds

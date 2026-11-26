@@ -3,6 +3,7 @@ id: security-devices
 domain: security
 risk_tier: high
 version: 1
+status: APPROVED
 title: Device Security Policy
 ---
 # Device Security Policy

@@ -3,6 +3,7 @@ id: onboarding-it
 domain: it
 risk_tier: low
 version: 1
+status: APPROVED
 title: New Joiner IT Setup
 ---
 # New Joiner IT Setup

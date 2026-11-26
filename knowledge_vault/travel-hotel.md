@@ -3,6 +3,7 @@ id: travel-hotel
 domain: travel
 risk_tier: low
 version: 1
+status: APPROVED
 title: Hotel Policy
 ---
 # Hotel Policy

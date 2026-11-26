@@ -3,6 +3,7 @@ id: client-gifts
 domain: compliance
 risk_tier: high
 version: 1
+status: APPROVED
 title: Client Gifts and Hospitality
 ---
 # Client Gifts and Hospitality

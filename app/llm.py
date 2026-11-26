@@ -47,7 +47,7 @@ class OpenRouterClient:
                 r.raise_for_status()
                 d = r.json()
                 u = d.get("usage", {})
-                res = LLMResult(d["choices"][0]["message"]["content"] or "", model, u.get("prompt_tokens", 0),
+                res = LLMResult(d["choices"][0]["message"]["content"] or "", d.get("model") or model, u.get("prompt_tokens", 0),
                                 u.get("completion_tokens", 0), total_ms=(time.perf_counter() - t0) * 1000)
                 res.ttft_ms = res.total_ms
                 telemetry.incr("llm.cost_usd", (res.prompt_tokens * self.price[0] + res.completion_tokens * self.price[1]) / 1e6)

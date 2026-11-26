@@ -3,6 +3,7 @@ id: per-diem
 domain: travel
 risk_tier: low
 version: 1
+status: APPROVED
 title: International Per Diem
 ---
 # International Per Diem

@@ -21,10 +21,12 @@ from app.vault import Graph, load_vault, ntokens, pruned_context
 from evals import redteam
 from mcp_servers.rag_server import BM25, cosine, rrf, tokenize
 from plugins.dispatch import FailureBreaker
+from ui_style import apply_theme, hero
 
 load_dotenv()
 ROOT = Path(__file__).parent
-st.set_page_config(page_title="PwC One Assistant - Workbench", layout="wide")
+st.set_page_config(page_title="PwC One Assistant - Workbench", page_icon="🧪", layout="wide")
+apply_theme()
 if os.getenv("APP_ENV") == "production":
     st.error("The developer workbench is disabled in production.")
     st.stop()
@@ -90,8 +92,7 @@ async def _mcp_call(server, tool, args):
         return await h.call(server, tool, args)
 
 
-st.title("PwC One Assistant - Developer Testing Workbench")
-st.caption("Dev/staging only. Runs against the in-process backend and the local knowledge vault.")
+hero("Developer Testing Workbench", "Dev/staging only. In-process backend and the approved local knowledge vault.")
 t1, t2, t3, t4, t5, t6 = st.tabs(["Architecture & Workflow", "Hybrid RAG Lab", "MCP & Plugin Inspector",
                                   "Memory & Graphify Tokens", "Red Team & Circuit Breaker", "KPI Scorecard & Load"])
 

@@ -1,5 +1,5 @@
 """Generates atomic Obsidian notes (YAML frontmatter + [[wikilinks]]) into knowledge_vault/.
-Content is synthetic, PII-free demo policy data for the PwC One Assistant."""
+Content is synthetic, PII-free demo policy data. status: APPROVED marks it retrievable for the demo only; it has not been reviewed by the organization."""
 from pathlib import Path
 
 NOTES = [
@@ -69,5 +69,5 @@ for nid, dom, title, risk, facts, links in NOTES:
     body = "\n".join(f"- {f}" for f in facts)
     rel = ", ".join(f"[[{l}]]" for l in links)
     (out / f"{nid}.md").write_text(
-        f"---\nid: {nid}\ndomain: {dom}\nrisk_tier: {risk}\nversion: 1\ntitle: {title}\n---\n# {title}\n\n{body}\n\nRelated: {rel}\n")
+        f"---\nid: {nid}\ndomain: {dom}\nrisk_tier: {risk}\nversion: 1\nstatus: APPROVED\ntitle: {title}\n---\n# {title}\n\n{body}\n\nRelated: {rel}\n")
 print(len(NOTES), "notes")
