@@ -78,7 +78,7 @@ def render_answer(item):
 with left:
     st.subheader("Conversation")
     if not st.session_state.history:
-        card('<span class="pwc-muted">Try: "What is the meal expense policy?" or '
+        card('<span class="pwc-muted">Try: "Are alcoholic drinks reimbursable under the meal policy?" or '
              '"Cancel order ORD-00012" to see the approval flow.</span>', title="Get started")
     for item in st.session_state.history:
         with st.chat_message("user", avatar="🙂"):

@@ -10,7 +10,7 @@ from app.auth import build_tenant_context
 from app.bulkhead import Bulkhead, Overloaded
 from app.cache import MemoryBackend, RedisBackend, SemanticCache
 from app.contracts import ChatRequest, ChatResponse, TenantContext
-from app.llm import OpenRouterClient
+from app.llm import FallbackLLM, OpenRouterClient
 from app.runtime_config import RuntimeConfig
 from app.settings import Settings
 from app.storage import Store
@@ -58,7 +58,10 @@ def create_app(settings: Settings | None = None, verifier=None, chunks=None, llm
     notes = load_vault() if (use_vault or graphify) else {}  # approved knowledge only
     allc = list(chunks or []) + (vault_chunks(notes, "*") if use_vault else [])
     if llm == "auto":
-        llm = OpenRouterClient(settings.openrouter_api_key, settings.openrouter_base_url) if settings.openrouter_api_key else None
+        primary = OpenRouterClient(settings.openrouter_api_key, settings.openrouter_base_url) if settings.openrouter_api_key else None
+        secondary = (OpenRouterClient(settings.groq_api_key, settings.groq_base_url)
+                     if settings.groq_api_key and settings.groq_model else None)
+        llm = FallbackLLM(primary, secondary, settings.groq_model) if secondary is not None else primary
     store = store or Store(settings.database_url or ":memory:")
     ops = OperationStore(store=store)
     harness = build_harness(notes)

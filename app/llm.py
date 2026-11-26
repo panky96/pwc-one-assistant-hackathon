@@ -83,3 +83,19 @@ def build_messages(anchor: str, context: list[tuple[str, str]], question: str) -
 
 def goal_anchor(question: str, entities: list[str], constraints: str = "Grounded answers only; no mutating actions.") -> str:
     return f"[GoalAnchorBlock] intent={question!r} entities={entities} policy={constraints}"
+
+
+class FallbackLLM:
+    """Primary client first; the secondary (Groq, OpenAI-compatible) is used only after the primary fails.
+    The secondary uses its own model id because provider model names differ."""
+    def __init__(self, primary, secondary, secondary_model: str):
+        self.primary, self.secondary, self.secondary_model = primary, secondary, secondary_model
+
+    def complete(self, messages: list[dict], model: str, max_tokens: int = int(os.getenv("LLM_MAX_TOKENS", "400")),
+                 temperature: float = 0.0) -> LLMResult:
+        if self.primary is not None:
+            try:
+                return self.primary.complete(messages, model, max_tokens=max_tokens, temperature=temperature)
+            except LLMError:
+                telemetry.incr("llm.fallback")
+        return self.secondary.complete(messages, self.secondary_model, max_tokens=max_tokens, temperature=temperature)

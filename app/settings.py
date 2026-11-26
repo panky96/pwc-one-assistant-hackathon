@@ -26,6 +26,9 @@ class Settings:
     azure_required_role: str
     openrouter_api_key: str = ""
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
+    groq_api_key: str = ""
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+    groq_model: str = ""
     model_small: str = "anthropic/claude-haiku-4.5"
     model_large: str = "anthropic/claude-sonnet-4.5"
     redis_url: str = ""
@@ -53,6 +56,9 @@ class Settings:
             azure_required_role=e.get("AZURE_REQUIRED_ROLE", ""),
             openrouter_api_key=e.get("OPENROUTER_API_KEY", ""),
             openrouter_base_url=e.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+            groq_api_key=e.get("GROQ_API_KEY", ""),
+            groq_base_url=e.get("GROQ_BASE_URL", "https://api.groq.com/openai/v1"),
+            groq_model=e.get("GROQ_MODEL", ""),
             model_small=e.get("LLM_MODEL_SMALL", "anthropic/claude-haiku-4.5"),
             model_large=e.get("LLM_MODEL_LARGE", "anthropic/claude-sonnet-4.5"),
             redis_url=e.get("REDIS_URL", ""), database_url=e.get("DATABASE_URL", ""),
