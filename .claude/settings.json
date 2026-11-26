@@ -6,6 +6,6 @@
   "hooks": {
     "PreToolUse": [{"matcher": "Bash|Edit|Write", "hooks": [{"type": "command", "command": "uv run python scripts/hook_tier_check.py"}]}],
     "PostToolUse": [{"matcher": "Edit|Write", "hooks": [{"type": "command", "command": "uv run python scripts/hook_audit.py"}]}],
-    "SessionStart": [{"hooks": [{"type": "command", "command": "ls knowledge_vault | head -40"}]}]
+    "SessionStart": [{"hooks": [{"type": "command", "command": "ls knowledge | head -40"}]}]
   }
 }

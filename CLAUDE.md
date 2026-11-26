@@ -4,13 +4,14 @@ Design: @design.md (deep dives in docs/). Safety rules live in plugins (fail clo
 ## Commands
 - `uv run pytest` - unit/integration tests (MCP stdio + HTTP servers, Streamlit AppTest)
 - `uv run uvicorn app.main:create_app --factory --env-file .env --reload` - API
-- `uv run streamlit run app.py` - developer workbench (6 tabs)
+- `uv run streamlit run ui/workbench.py` - developer workbench (6 tabs)
+- `uv run streamlit run ui/chat.py` - chat page
 - `uv run python -m evals.redteam` - 100-prompt red-team suite (CI rule: 0 misses)
 - `uv run python -m evals.golden` - (re)generate the 250-case golden set via OpenRouter (costs tokens)
 - `uv run python -m evals.run_golden [--llm]` - golden evaluation against RAGAS-style gates
 - `uv run python -m evals.kpis` - 36-KPI scorecard (unmeasured KPIs fail closed)
 - `uv run python scripts/run_load.py load 300 20s` - local k6 capacity run (not production certification)
-- `uv run python scripts/build_vault.py` - rebuild knowledge_vault/ demo notes
+- `uv run python scripts/build_vault.py` - rebuild knowledge/ demo notes
 
 ## Gotchas
 - `app.py` (workbench) and `app/` (package) share a name by design; the package wins on import.

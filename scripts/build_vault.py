@@ -1,4 +1,4 @@
-"""Generates atomic Obsidian notes (YAML frontmatter + [[wikilinks]]) into knowledge_vault/.
+"""Generates atomic Obsidian notes (YAML frontmatter + [[wikilinks]]) into knowledge/.
 Content is synthetic, PII-free demo policy data. status: APPROVED marks it retrievable for the demo only; it has not been reviewed by the organization."""
 from pathlib import Path
 
@@ -63,7 +63,7 @@ NOTES = [
   ["Performance reviews take place twice per year in June and December.","Ratings use a five-point scale.","Employees rated 1 enter a 90-day improvement plan."],["onboarding-hr","training-budget"]),
 ]
 
-out = Path(__file__).resolve().parent.parent / "knowledge_vault"
+out = Path(__file__).resolve().parent.parent / "knowledge"
 out.mkdir(exist_ok=True)
 for nid, dom, title, risk, facts, links in NOTES:
     body = "\n".join(f"- {f}" for f in facts)

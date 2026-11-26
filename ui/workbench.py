@@ -1,5 +1,8 @@
 """PwC One Assistant - Multi-Tab Streamlit Developer Testing Workbench (dev/staging only).
 Run: uv run streamlit run app.py     (the chat page is chat_app.py)"""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # project root
 import asyncio, json, os, time
 from pathlib import Path
 
@@ -21,10 +24,10 @@ from app.vault import Graph, load_vault, ntokens, pruned_context
 from evals import redteam
 from mcp_servers.rag_server import BM25, cosine, rrf, tokenize
 from plugins.dispatch import FailureBreaker
-from ui_style import apply_theme, hero
+from ui.style import apply_theme, hero
 
 load_dotenv()
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parents[1]
 st.set_page_config(page_title="PwC One Assistant - Workbench", page_icon="🧪", layout="wide")
 apply_theme()
 if os.getenv("APP_ENV") == "production":

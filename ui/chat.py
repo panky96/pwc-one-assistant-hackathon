@@ -1,6 +1,9 @@
 """PwC One Assistant - chat console (Streamlit, dev/staging).
 Ask questions, see routing and grounded answers, approve or deny tier-3 actions, and watch selected live metrics.
 Run: uv run streamlit run chat_app.py   (AUTH_ENABLED must be false here; production needs bearer tokens)."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # project root
 import time
 import uuid
 
@@ -13,7 +16,7 @@ from app.contracts import TenantContext
 from app.main import create_app
 from app.settings import Settings
 from app.transactions import TxnError
-from ui_style import MODE_KIND, ROUTE_KIND, apply_theme, badge, card, esc, hero, kpi
+from ui.style import MODE_KIND, ROUTE_KIND, apply_theme, badge, card, esc, hero, kpi
 
 load_dotenv()
 st.set_page_config(page_title="PwC One Assistant", page_icon="🧭", layout="wide")

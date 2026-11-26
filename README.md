@@ -7,7 +7,7 @@ uv sync
 cp .env.example .env            # add OPENROUTER_API_KEY to enable real LLM answers (otherwise extractive answers)
 uv run pytest
 uv run uvicorn app.main:create_app --factory --env-file .env --reload
-uv run streamlit run app.py     # developer workbench
+uv run streamlit run ui/workbench.py     # developer workbench
 ```
 
 ## Layout
@@ -17,7 +17,7 @@ uv run streamlit run app.py     # developer workbench
 | `plugins/` | PII redactor, injection shield, loop/failure breakers, idempotency, RAGAS auditor, model fallback |
 | `mcp_servers/` | `rag_server.py` (hybrid retrieval library), `rag_mcp.py` / `graphify_mcp.py` (stdio), `state_mcp.py` (Streamable HTTP) |
 | `mcp_config.json` | server/plugin/retrieval/resilience/observability config (validated by `app/mcp_config.py`) |
-| `knowledge_vault/` | atomic Obsidian notes with frontmatter + wikilinks (demo, PII-free) |
+| `knowledge/` | atomic Obsidian notes with frontmatter + wikilinks (demo, PII-free) |
 | `evals/` | red team (100), golden set (250), golden runner, 36-KPI scorecard; results in `evals/results/` |
 | `load_tests/`, `scripts/run_load.py` | k6 constant-arrival-rate scenarios (smoke/load/soak/isolation) |
 | `app.py` | six-tab Streamlit developer workbench (dev/staging only) |

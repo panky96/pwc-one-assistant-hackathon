@@ -30,7 +30,7 @@ def parse_note(path: Path) -> Note:
                 status=meta.get("status", "DRAFT"))
 
 
-def load_vault(path: str | Path = "knowledge_vault", approved_only: bool = True) -> dict[str, Note]:
+def load_vault(path: str | Path = "knowledge", approved_only: bool = True) -> dict[str, Note]:
     notes = {n.id: n for n in (parse_note(p) for p in sorted(Path(path).glob("*.md")))}
     return {i: n for i, n in notes.items() if n.status == "APPROVED"} if approved_only else notes
 

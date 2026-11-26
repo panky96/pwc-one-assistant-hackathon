@@ -1,4 +1,4 @@
-"""Measure the claim verifier against hand-labelled answers (tests/golden/verifier_labels.json).
+"""Measure the claim verifier against hand-labelled answers (data/labels/verifier_labels.json).
 No model calls. Reports false rejects (correct answers blocked) and false accepts (unsupported answers let through)."""
 from __future__ import annotations
 import json
@@ -6,7 +6,7 @@ from collections import defaultdict
 from pathlib import Path
 from app.verification import verify
 
-LABELS = Path(__file__).resolve().parent.parent / "tests" / "golden" / "verifier_labels.json"
+LABELS = Path(__file__).resolve().parent.parent / "data" / "labels" / "verifier_labels.json"
 RESULTS = Path(__file__).resolve().parent / "results"
 
 

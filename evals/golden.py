@@ -7,7 +7,7 @@ from app.vault import Graph, load_vault
 
 TYPES = {"Factoid": ("Easy", 63), "Complex/Reasoning": ("Medium", 62), "Multi-Hop": ("Hard", 50),
          "Summary": ("Medium", 38), "Negative/Unanswerable": ("Hard", 37)}
-OUT = Path(__file__).resolve().parent.parent / "tests" / "golden" / "golden_250.json"
+OUT = Path(__file__).resolve().parent.parent / "data" / "golden" / "golden_250.json"
 
 
 REVIEW_STATES = {"GENERATED", "HUMAN_REVIEWED", "DOMAIN_REVIEWED", "CLINICALLY_REVIEWED"}
