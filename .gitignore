@@ -34,3 +34,4 @@ Thumbs.db
 # Generated artifacts (not source)
 evals/results/
 graphify-out/
+logs/

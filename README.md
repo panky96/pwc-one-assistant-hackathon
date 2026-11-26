@@ -29,7 +29,8 @@ uv run streamlit run ui/workbench.py   # developer workbench (six tabs)
 | `scripts/` | Vault build, local load runner, Claude Code hooks |
 | `load_tests/` | k6 scenarios (smoke, load, isolation, soak) |
 | `docs/` | Design deep-dives; `docs/archive/` holds earlier Word documents |
-| `second-brain/` | Project and session notes, kept separate from production retrieval |
+| `notes/` | Project and development notes. Not used by production retrieval |
+| `logs/` | Generated session logs (git-ignored) |
 | `mcp_config.json` | Servers, plugins, retrieval thresholds, bulkheads, governance versions (validated by `app/mcp_config.py`) |
 
 ## Configuration
