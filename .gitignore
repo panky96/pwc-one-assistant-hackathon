@@ -31,3 +31,6 @@ Thumbs.db
 *.db
 *.sqlite
 *.sqlite3
+# Generated artifacts (not source)
+evals/results/
+graphify-out/
